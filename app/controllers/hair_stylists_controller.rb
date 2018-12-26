@@ -1,2 +1,3 @@
 class HairStylistsController < ApplicationController
+  
 end

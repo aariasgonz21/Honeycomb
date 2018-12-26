@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2018_12_26_211229) do
     t.text "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "description"
   end
 
 end

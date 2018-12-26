@@ -171,3 +171,143 @@ Completed 200 OK in 1045ms (Views: 1027.1ms | ActiveRecord: 0.0ms)
   ↳ bin/rails:9
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-12-26 18:34:21 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 971ms (Views: 930.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-26 18:34:23 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  Rendered salons/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 111ms (Views: 79.9ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddDescriptionToSalons (20181226234120)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (2.5ms)[0m  [1m[35mALTER TABLE "salons" ADD "description_id" integer[0m
+  ↳ db/migrate/20181226234120_add_description_to_salons.rb:3
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181226234120_add_description_to_salons.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_salons_on_description_id" ON "salons" ("description_id")[0m
+  ↳ db/migrate/20181226234120_add_description_to_salons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181226234120"]]
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveDescriptionFromSalons (20181226234433)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181226234433_remove_description_from_salons.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "asalons" ("id" integer NOT NULL PRIMARY KEY, "name" text DEFAULT NULL, "price" text DEFAULT NULL, "location" text DEFAULT NULL, "phone_number" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "description_id" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20181226234433_remove_description_from_salons.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_asalons_on_description_id" ON "asalons" ("description_id")[0m
+  ↳ db/migrate/20181226234433_remove_description_from_salons.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "asalons" ("id","name","price","location","phone_number","created_at","updated_at","description_id")
+                     SELECT "id","name","price","location","phone_number","created_at","updated_at","description_id" FROM "salons"[0m
+  ↳ db/migrate/20181226234433_remove_description_from_salons.rb:3
+  [1m[35m (3.5ms)[0m  [1m[35mDROP TABLE "salons"[0m
+  ↳ db/migrate/20181226234433_remove_description_from_salons.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "salons" ("id" integer NOT NULL PRIMARY KEY, "name" text DEFAULT NULL, "price" text DEFAULT NULL, "location" text DEFAULT NULL, "phone_number" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "description_id" integer DEFAULT NULL)[0m
+  ↳ db/migrate/20181226234433_remove_description_from_salons.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_salons_on_description_id" ON "salons" ("description_id")[0m
+  ↳ db/migrate/20181226234433_remove_description_from_salons.rb:3
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "salons" ("id","name","price","location","phone_number","created_at","updated_at","description_id")
+                     SELECT "id","name","price","location","phone_number","created_at","updated_at","description_id" FROM "asalons"[0m
+  ↳ db/migrate/20181226234433_remove_description_from_salons.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "asalons"[0m
+  ↳ db/migrate/20181226234433_remove_description_from_salons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181226234433"]]
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveDescriptionFromSalons (20181226234433)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "salons" ADD "description" text[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181226234433"]]
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddDescriptionToSalons (20181226234120)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "asalons" ("id" integer NOT NULL PRIMARY KEY, "name" text DEFAULT NULL, "price" text DEFAULT NULL, "location" text DEFAULT NULL, "phone_number" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "description_id" integer DEFAULT NULL, "description" text DEFAULT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_asalons_on_description_id" ON "asalons" ("description_id")[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "asalons" ("id","name","price","location","phone_number","created_at","updated_at","description_id","description")
+                     SELECT "id","name","price","location","phone_number","created_at","updated_at","description_id","description" FROM "salons"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "salons"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "salons" ("id" integer NOT NULL PRIMARY KEY, "name" text DEFAULT NULL, "price" text DEFAULT NULL, "location" text DEFAULT NULL, "phone_number" text DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "description" text DEFAULT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "salons" ("id","name","price","location","phone_number","created_at","updated_at","description")
+                     SELECT "id","name","price","location","phone_number","created_at","updated_at","description" FROM "asalons"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "asalons"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181226234120"]]
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
