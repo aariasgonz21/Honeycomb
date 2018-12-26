@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer: one
+  hair_stylist: one
+  date: 
+  service: MyText
+  price: 9.99
+
+two:
+  customer: two
+  hair_stylist: two
+  date: 
+  service: MyText
+  price: 9.99
