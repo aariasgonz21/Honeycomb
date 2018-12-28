@@ -1,1 +1,13 @@
 <h1>Salons</h1>
+
+<ul>
+  <% @salons.each do |salon| %>
+    <li><h3><%= link_to salon.name, salon_path(salon) %></h3></li>
+    <li><%= salon.price %></li>
+    <li><%= salon.location %></li>
+    <li><%= salon.phone_number %></li>
+    <% end %>
+</ul><br>
+
+<!-- jk, can't add a salon unless you're signed in-->
+<!-- < % = link_to "Add a Salon", new_salon_path %>-->

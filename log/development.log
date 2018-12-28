@@ -311,3 +311,503 @@ Migrating to AddDescriptionToSalons (20181226234120)
   ↳ bin/rails:9
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for 127.0.0.1 at 2018-12-27 18:43:12 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 510ms (Views: 490.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 18:43:16 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 70ms (Views: 53.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 18:44:00 -0500
+Processing by SalonsController#index as HTML
+  [1m[36mSalon Load (0.5ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/salons_controller.rb:8
+  [1m[36mCACHE Salon Load (0.0ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/salons_controller.rb:8
+  [1m[36mCACHE Salon Load (0.0ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/salons_controller.rb:8
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mSalon Destroy (1.9ms)[0m  [1m[31mDELETE FROM "salons"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mSalon Create (1.8ms)[0m  [1m[32mINSERT INTO "salons" ("name", "price", "location", "phone_number", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Coffee And Cream"], ["price", "$$"], ["location", "Brooklyn, NY"], ["phone_number", "(718) 555-5566"], ["created_at", "2018-12-28 02:42:35.863651"], ["updated_at", "2018-12-28 02:42:35.863651"], ["description", "We like our coffee like we like our hair... Black. We specialize in 3b-4c haircuts, braids and twists."]]
+  ↳ db/seeds.rb:13
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mSalon Create (0.4ms)[0m  [1m[32mINSERT INTO "salons" ("name", "price", "location", "phone_number", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Killing Me Softly"], ["price", "$$$"], ["location", "Harlem, NY"], ["phone_number", "(212) 555-8888"], ["created_at", "2018-12-28 02:42:35.869993"], ["updated_at", "2018-12-28 02:42:35.869993"], ["description", "Kill and slay your look with us! We specialize in haircuts, braids, dreads, & wash n'gos!"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mSalon Create (0.8ms)[0m  [1m[32mINSERT INTO "salons" ("name", "price", "location", "phone_number", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Brenda's Hair Salon"], ["price", "$"], ["location", "Jamaica, NY"], ["phone_number", "(718) 555-1212"], ["created_at", "2018-12-28 02:42:35.874761"], ["updated_at", "2018-12-28 02:42:35.874761"], ["description", "We've got washing and straightening!"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+Started GET "/" for 127.0.0.1 at 2018-12-27 21:51:55 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 402ms (Views: 387.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 21:51:57 -0500
+Processing by SalonsController#index as HTML
+  [1m[36mSalon Load (0.5ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/salons_controller.rb:8
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 21:53:29 -0500
+Completed 500 Internal Server Error in 91549ms (ActiveRecord: 3.5ms)
+
+
+Processing by SalonsController#index as HTML
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 21:54:04 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (4.7ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (36.9ms)
+Completed 200 OK in 470ms (Views: 443.4ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2018-12-27 21:54:15 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 182ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `param' for #<SalonsController:0x007feb8ac5e7e8>
+Did you mean?  params
+               params=):
+  
+app/controllers/salons_controller.rb:28:in `find_salon'
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 21:54:22 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 61ms (Views: 51.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 21:56:17 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 64ms (Views: 55.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 22:02:10 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 131ms (Views: 120.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/salons/3" for 127.0.0.1 at 2018-12-27 22:02:40 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"3"}
+Completed 500 Internal Server Error in 169ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `param' for #<SalonsController:0x007feb8a5c5170>
+Did you mean?  params
+               params=):
+  
+app/controllers/salons_controller.rb:28:in `find_salon'
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 22:02:42 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 70ms (Views: 62.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 22:03:49 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 66ms (Views: 56.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 22:03:49 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 141ms (Views: 128.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 22:04:30 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.8ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 79ms (Views: 67.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2018-12-27 22:04:31 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `param' for #<SalonsController:0x007feb8c30cd28>
+Did you mean?  params
+               params=):
+  
+app/controllers/salons_controller.rb:28:in `find_salon'
+Started GET "/salons/1" for 127.0.0.1 at 2018-12-27 22:05:13 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `param' for #<SalonsController:0x007feb8a6c15d8>
+Did you mean?  params
+               params=):
+  
+app/controllers/salons_controller.rb:28:in `find_salon'
+Started GET "/salons/1" for 127.0.0.1 at 2018-12-27 22:05:32 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:28
+  Rendering salons/show.html.erb within layouts/application
+  Rendered salons/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 263ms (Views: 198.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 22:05:41 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 76ms (Views: 66.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-27 22:05:42 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 64ms (Views: 50.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 22:05:45 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 68ms (Views: 56.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/salons/2" for 127.0.0.1 at 2018-12-27 22:05:46 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:28
+  Rendering salons/show.html.erb within layouts/application
+  Rendered salons/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 60ms (Views: 47.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons/3" for 127.0.0.1 at 2018-12-27 22:05:50 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:28
+  Rendering salons/show.html.erb within layouts/application
+  Rendered salons/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 59ms (Views: 47.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 22:06:23 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 58ms (Views: 49.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 22:06:45 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 62ms (Views: 51.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 22:07:01 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 64ms (Views: 54.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/salons/3" for 127.0.0.1 at 2018-12-27 22:07:24 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSalon Load (0.5ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:28
+  Rendering salons/show.html.erb within layouts/application
+  Rendered salons/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 57ms (Views: 46.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-27 22:07:40 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 54ms (Views: 43.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-27 22:10:46 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 96ms (Views: 82.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 22:11:01 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 55ms (Views: 43.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2018-12-27 22:11:03 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:28
+  Rendering salons/show.html.erb within layouts/application
+  Rendered salons/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 66ms (Views: 54.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2018-12-27 22:11:15 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.5ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:28
+  Rendering salons/show.html.erb within layouts/application
+  Rendered salons/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 73ms (Views: 62.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2018-12-27 22:11:48 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:28
+  Rendering salons/show.html.erb within layouts/application
+  Rendered salons/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 56ms (Views: 46.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2018-12-27 22:14:06 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:28
+  Rendering salons/show.html.erb within layouts/application
+  Rendered salons/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 54ms (Views: 43.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 22:14:07 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (251.3ms)
+Completed 500 Internal Server Error in 277ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_salons_path' for #<#<Class:0x007feb8a5d2820>:0x007feb8f7da5f0>
+Did you mean?  new_salon_path):
+     9:     <% end %>
+    10: </ul>
+    11: 
+    12: <%= link_to "Add a Salon", new_salons_path %>
+  
+app/views/salons/index.html.erb:12:in `_app_views_salons_index_html_erb___1145340265728659710_70324850710540'
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 22:14:43 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 58ms (Views: 49.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/salons/new" for 127.0.0.1 at 2018-12-27 22:14:45 -0500
+Processing by SalonsController#new as HTML
+  Rendering salons/new.html.erb within layouts/application
+  Rendered salons/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 57ms (Views: 45.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 22:15:02 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 57ms (Views: 47.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-27 22:15:17 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 53ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 22:15:23 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 71ms (Views: 44.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2018-12-27 22:15:25 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:28
+  Rendering salons/show.html.erb within layouts/application
+  Rendered salons/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 49ms (Views: 42.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/salons/2" for 127.0.0.1 at 2018-12-27 22:15:42 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSalon Load (0.7ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:28
+  Rendering salons/show.html.erb within layouts/application
+  Rendered salons/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 49ms (Views: 40.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/salons/3" for 127.0.0.1 at 2018-12-27 22:15:47 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:28
+  Rendering salons/show.html.erb within layouts/application
+  Rendered salons/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 53ms (Views: 41.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 22:16:42 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  Rendered salons/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/salons/index.html.erb:13: unterminated string meets end of file
+/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/salons/index.html.erb:13: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/salons/index.html.erb:13: unterminated string meets end of file
+app/views/salons/index.html.erb:13: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 22:22:04 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 64ms (Views: 53.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 23:23:30 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 130ms (Views: 108.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-27 23:23:32 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 85ms (Views: 69.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 23:23:34 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 73ms (Views: 60.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2018-12-27 23:23:36 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:28
+  Rendering salons/show.html.erb within layouts/application
+  Rendered salons/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 142ms (Views: 124.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-27 23:24:36 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 62ms (Views: 50.6ms | ActiveRecord: 1.1ms)
+
+

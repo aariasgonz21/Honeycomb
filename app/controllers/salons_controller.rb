@@ -4,6 +4,7 @@ class SalonsController < ApplicationController
 
   def index
     @salons = Salon.all
+    #byebug
   end
 
   def show
@@ -24,7 +25,7 @@ class SalonsController < ApplicationController
   private
 
   def find_salon
-    @salon = Salon.all.find(param[:id])
+    @salon = Salon.find(params[:id])
   end
 
   def salon_params
