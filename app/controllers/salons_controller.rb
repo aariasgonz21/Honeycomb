@@ -8,6 +8,7 @@ class SalonsController < ApplicationController
   end
 
   def show
+    @hair_stylists = @salon.hair_stylists
   end
 
   def new

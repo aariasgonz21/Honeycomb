@@ -1,0 +1,6 @@
+<h1><%= @hair_stylist.name %></h1><br>
+<h5> Years of Experience: <%= @hair_stylist.years_of_experience %></h5>
+
+<h4>Specialty: <%= @hair_stylist.specialty %></h4>
+
+<h4><%= link_to "Make an appointment", new_hair_stylist_appointment_path(@hair_stylist) %></h4>

@@ -2,10 +2,6 @@ class HairStylistsController < ApplicationController
 
   before_action :find_hair_stylist, only: :show
 
-  def index
-    @hair_stylists = HairStylists.all
-  end
-
   def show
   end
 
@@ -16,7 +12,7 @@ class HairStylistsController < ApplicationController
   private
 
   def find_hair_stylist
-    @hair_stylist = HairStylists.find(params[:id])
+    @hair_stylist = HairStylist.find(params[:id])
   end
 
 end

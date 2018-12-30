@@ -5,3 +5,6 @@
 <p><%= @salon.description %></p>
 
 <h3>Hair Stylists</h3>
+<% @hair_stylists.each do |hair_stylist| %>
+    <p><%=link_to hair_stylist.name, hair_stylist_path(hair_stylist)%></p>
+<% end %>
