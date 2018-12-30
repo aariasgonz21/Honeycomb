@@ -34,3 +34,9 @@ latoya = HairStylist.create(name: "LaToya Jackson", specialty: "straightening, h
 michael = HairStylist.create(name: "Michael Jackson", specialty: "haircuts, braids", years_of_experience: "2", salon_id: 3)
 #
 janet = HairStylist.create(name: "Janet Jackson", specialty: "bantu knots, senegalese twists", years_of_experience: "7", salon_id: 3)
+
+aj = Customer.create(name: "AJ Baskett", hairtype: "3a", location: "Queens, NY")
+ana = Customer.create(name: "Ana Arias", hairtype: "3b", location: "Queens, NY")
+bri = Customer.create(name: "Briana Arnold", hairtype: "4b", location: "Bronx, NY")
+zakiya = Customer.create(name: "Zakiya Simms", hairtype: "4c", location: "Brooklyn, NY")
+giselle = Customer.create(name: "Giselle Santiago", hairtype: "3a", location: "Harlem, NY")

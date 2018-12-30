@@ -2283,3 +2283,538 @@ Completed 200 OK in 54ms (Views: 46.3ms | ActiveRecord: 0.2ms)
 Started GET "/hair_stylists/1/appointments/new" for 127.0.0.1 at 2018-12-30 17:28:10 -0500
 Processing by AppointmentsController#new as HTML
   Parameters: {"hair_stylist_id"=>"1"}
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2018-12-30 17:50:59 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  Rendered hair_stylists/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 514ms (Views: 481.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-30 17:51:04 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 52ms (Views: 41.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-30 17:51:04 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"customers", :id=>nil}, missing required keys: [:id]):
+    1: <h1>Honeycomb</h1>
+    2: 
+    3: <%= link_to "Salons", salons_path %>
+    4: <%= link_to "Login", customer_path(@customer) %>
+    5: <%= link_to "Create New Profile", new_customer_path %>
+  
+app/views/pages/home.html.erb:4:in `_app_views_pages_home_html_erb__862249521657223071_70178963195740'
+Started GET "/" for 127.0.0.1 at 2018-12-30 17:52:13 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"customers"}, missing required keys: [:id]):
+    1: <h1>Honeycomb</h1>
+    2: 
+    3: <%= link_to "Salons", salons_path %>
+    4: <%= link_to "Login", customer_path %>
+    5: <%= link_to "Create New Profile", new_customer_path %>
+  
+app/views/pages/home.html.erb:4:in `_app_views_pages_home_html_erb__862249521657223071_70178958907360'
+Started GET "/" for 127.0.0.1 at 2018-12-30 17:53:52 -0500
+Processing by PagesController#home as HTML
+Completed 404 Not Found in 10ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Customer without an ID):
+  
+app/controllers/pages_controller.rb:3:in `home'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "appointments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "customer_id" integer, "hair_stylist_id" integer, "date" text, "service" text, "price" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_customer_id" ON "appointments" ("customer_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_hair_stylist_id" ON "appointments" ("hair_stylist_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "customers"[0m
+  ↳ db/schema.rb:27
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "customers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "hairtype" text, "location" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "hair_stylists"[0m
+  ↳ db/schema.rb:35
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "hair_stylists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "specialty" text, "years_of_experience" integer, "salon_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:35
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE  INDEX "index_hair_stylists_on_salon_id" ON "hair_stylists" ("salon_id")[0m
+  ↳ db/schema.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "salons"[0m
+  ↳ db/schema.rb:45
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "salons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "price" text, "location" text, "phone_number" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "description" text)[0m
+  ↳ db/schema.rb:45
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181226211229)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181226205729),
+(20181226210606),
+(20181226205945);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-30 22:57:41.388588"], ["updated_at", "2018-12-30 22:57:41.388588"]]
+  ↳ db/schema.rb:13
+  [1m[35m (23.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "appointments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "customer_id" integer, "hair_stylist_id" integer, "date" text, "service" text, "price" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_customer_id" ON "appointments" ("customer_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_hair_stylist_id" ON "appointments" ("hair_stylist_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "customers"[0m
+  ↳ db/schema.rb:27
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "customers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "hairtype" text, "location" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "hair_stylists"[0m
+  ↳ db/schema.rb:35
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "hair_stylists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "specialty" text, "years_of_experience" integer, "salon_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:35
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE  INDEX "index_hair_stylists_on_salon_id" ON "hair_stylists" ("salon_id")[0m
+  ↳ db/schema.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "salons"[0m
+  ↳ db/schema.rb:45
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "salons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "price" text, "location" text, "phone_number" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "description" text)[0m
+  ↳ db/schema.rb:45
+  [1m[35m (16.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (4.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181226211229)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (8.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181226205729),
+(20181226210606),
+(20181226205945);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-30 22:57:41.514497"], ["updated_at", "2018-12-30 22:57:41.514497"]]
+  ↳ db/schema.rb:13
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-12-30 22:57:41.524727"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mSalon Destroy (3.1ms)[0m  [1m[31mDELETE FROM "salons"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mHairStylist Destroy (39.1ms)[0m  [1m[31mDELETE FROM "hair_stylists"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mSalon Create (1.1ms)[0m  [1m[32mINSERT INTO "salons" ("name", "price", "location", "phone_number", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Coffee And Cream"], ["price", "$$"], ["location", "Brooklyn, NY"], ["phone_number", "(718) 555-5566"], ["created_at", "2018-12-30 22:57:41.671316"], ["updated_at", "2018-12-30 22:57:41.671316"], ["description", "We like our coffee like we like our hair... Black. We specialize in 3b-4c haircuts, braids and twists."]]
+  ↳ db/seeds.rb:14
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mSalon Create (0.6ms)[0m  [1m[32mINSERT INTO "salons" ("name", "price", "location", "phone_number", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Killing Me Softly"], ["price", "$$$"], ["location", "Harlem, NY"], ["phone_number", "(212) 555-8888"], ["created_at", "2018-12-30 22:57:41.681614"], ["updated_at", "2018-12-30 22:57:41.681614"], ["description", "Kill and slay your look with us! We specialize in haircuts, braids, dreads, & wash n'gos!"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (5.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[36mSalon Create (2.7ms)[0m  [1m[32mINSERT INTO "salons" ("name", "price", "location", "phone_number", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Brenda's Hair Salon"], ["price", "$"], ["location", "Jamaica, NY"], ["phone_number", "(718) 555-1212"], ["created_at", "2018-12-30 22:57:41.701918"], ["updated_at", "2018-12-30 22:57:41.701918"], ["description", "We've got washing and straightening!"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:18
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mHairStylist Create (0.7ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Lori Styles"], ["specialty", "Haircuts, wash n' go"], ["years_of_experience", 3], ["salon_id", 1], ["created_at", "2018-12-30 22:57:41.769342"], ["updated_at", "2018-12-30 22:57:41.769342"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mSalon Load (1.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mHairStylist Create (8.9ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "James Hughes"], ["specialty", "Twists, Haircuts"], ["years_of_experience", 7], ["salon_id", 1], ["created_at", "2018-12-30 22:57:41.827511"], ["updated_at", "2018-12-30 22:57:41.827511"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (29.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+  [1m[36mHairStylist Create (1.0ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Layla Jones"], ["specialty", "Braids, Twists"], ["years_of_experience", 5], ["salon_id", 1], ["created_at", "2018-12-30 22:57:41.876356"], ["updated_at", "2018-12-30 22:57:41.876356"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (37.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:26
+  [1m[36mHairStylist Create (0.8ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Milan Sacher"], ["specialty", "haircuts"], ["years_of_experience", 1], ["salon_id", 2], ["created_at", "2018-12-30 22:57:41.921418"], ["updated_at", "2018-12-30 22:57:41.921418"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+  [1m[36mHairStylist Create (0.7ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Jarrian McLean"], ["specialty", "dreads, wash n' gos"], ["years_of_experience", 4], ["salon_id", 2], ["created_at", "2018-12-30 22:57:41.930328"], ["updated_at", "2018-12-30 22:57:41.930328"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mSalon Load (0.6ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:30
+  [1m[36mHairStylist Create (11.8ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Imani Josephs"], ["specialty", "twists, haircuts"], ["salon_id", 2], ["created_at", "2018-12-30 22:57:41.949693"], ["updated_at", "2018-12-30 22:57:41.949693"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+  [1m[36mHairStylist Create (6.9ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "LaToya Jackson"], ["specialty", "straightening, haircuts"], ["years_of_experience", 6], ["salon_id", 3], ["created_at", "2018-12-30 22:57:42.009214"], ["updated_at", "2018-12-30 22:57:42.009214"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:34
+  [1m[36mHairStylist Create (0.6ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Michael Jackson"], ["specialty", "haircuts, braids"], ["years_of_experience", 2], ["salon_id", 3], ["created_at", "2018-12-30 22:57:42.026123"], ["updated_at", "2018-12-30 22:57:42.026123"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:36
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[36mHairStylist Create (0.7ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Janet Jackson"], ["specialty", "bantu knots, senegalese twists"], ["years_of_experience", 7], ["salon_id", 3], ["created_at", "2018-12-30 22:57:42.032901"], ["updated_at", "2018-12-30 22:57:42.032901"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[36mCustomer Create (1.7ms)[0m  [1m[32mINSERT INTO "customers" ("name", "hairtype", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "AJ Baskett"], ["hairtype", "3a"], ["location", "Queens, NY"], ["created_at", "2018-12-30 22:57:42.087693"], ["updated_at", "2018-12-30 22:57:42.087693"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[36mCustomer Create (0.6ms)[0m  [1m[32mINSERT INTO "customers" ("name", "hairtype", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ana Arias"], ["hairtype", "3b"], ["location", "Queens, NY"], ["created_at", "2018-12-30 22:57:42.116278"], ["updated_at", "2018-12-30 22:57:42.116278"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (15.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mCustomer Create (7.9ms)[0m  [1m[32mINSERT INTO "customers" ("name", "hairtype", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Briana Arnold"], ["hairtype", "4b"], ["location", "Bronx, NY"], ["created_at", "2018-12-30 22:57:42.135234"], ["updated_at", "2018-12-30 22:57:42.135234"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mCustomer Create (0.7ms)[0m  [1m[32mINSERT INTO "customers" ("name", "hairtype", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Zakiya Simms"], ["hairtype", "4c"], ["location", "Brooklyn, NY"], ["created_at", "2018-12-30 22:57:42.171635"], ["updated_at", "2018-12-30 22:57:42.171635"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (9.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mCustomer Create (1.2ms)[0m  [1m[32mINSERT INTO "customers" ("name", "hairtype", "location", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Giselle Santiago"], ["hairtype", "3a"], ["location", "Harlem, NY"], ["created_at", "2018-12-30 22:57:42.185786"], ["updated_at", "2018-12-30 22:57:42.185786"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
+Started GET "/" for 127.0.0.1 at 2018-12-30 17:58:02 -0500
+Processing by PagesController#home as HTML
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Customer without an ID):
+  
+app/controllers/pages_controller.rb:3:in `home'
+Started GET "/" for 127.0.0.1 at 2018-12-30 18:03:00 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 41ms (Views: 38.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-30 18:03:11 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 57ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/new" for 127.0.0.1 at 2018-12-30 18:03:16 -0500
+Processing by CustomersController#new as HTML
+Completed 406 Not Acceptable in 267ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionController::UnknownFormat (CustomersController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.2.2) lib/action_controller/metal/implicit_render.rb:55:in `default_render'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (5.2.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:194:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (5.2.2) lib/active_support/callbacks.rb:132:in `run_callbacks'
+actionpack (5.2.2) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.2) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.2) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.2) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.2) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.2) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.2) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.2) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.2) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-12-30 18:03:24 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 49ms (Views: 42.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2018-12-30 18:03:29 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 46ms (Views: 37.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-30 18:31:31 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 46ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customer/1" for 127.0.0.1 at 2018-12-30 18:31:41 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/customer/1"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/customers/1" for 127.0.0.1 at 2018-12-30 18:31:54 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:31
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 65ms (Views: 54.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2018-12-30 18:33:00 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:32
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 52813ms (Views: 67.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/customers/2" for 127.0.0.1 at 2018-12-30 18:34:40 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:32
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 72ms (Views: 48.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/customers/3" for 127.0.0.1 at 2018-12-30 18:34:45 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:32
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 91ms (Views: 85.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/customers/4" for 127.0.0.1 at 2018-12-30 18:34:49 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:32
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 48ms (Views: 42.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/customers/5" for 127.0.0.1 at 2018-12-30 18:34:52 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:32
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 47ms (Views: 39.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2018-12-30 18:34:58 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:32
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 78ms (Views: 70.9ms | ActiveRecord: 0.3ms)
+
+
