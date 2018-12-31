@@ -35,8 +35,18 @@ michael = HairStylist.create(name: "Michael Jackson", specialty: "haircuts, brai
 #
 janet = HairStylist.create(name: "Janet Jackson", specialty: "bantu knots, senegalese twists", years_of_experience: "7", salon_id: 3)
 
-# aj = Customer.create(name: "AJ Baskett", hairtype: "3a", location: "Queens, NY")
-# ana = Customer.create(name: "Ana Arias", hairtype: "3b", location: "Queens, NY")
-# bri = Customer.create(name: "Briana Arnold", hairtype: "4b", location: "Bronx, NY")
-# zakiya = Customer.create(name: "Zakiya Simms", hairtype: "4c", location: "Brooklyn, NY")
-# giselle = Customer.create(name: "Giselle Santiago", hairtype: "3a", location: "Harlem, NY")
+aj = Customer.create(name: "AJ Baskett", hairtype_id: 4, location: "Queens, NY")
+ana = Customer.create(name: "Ana Arias", hairtype_id: 5, location: "Queens, NY")
+bri = Customer.create(name: "Briana Arnold", hairtype_id: 7, location: "Bronx, NY")
+zakiya = Customer.create(name: "Zakiya Simms", hairtype_id: 9, location: "Brooklyn, NY")
+giselle = Customer.create(name: "Giselle Santiago", hairtype_id: 2, location: "Harlem, NY")
+
+two_a = Hairtype.create(name: "2a", description: "Your waves are fine and thin with a loose, tousled texture.")
+two_b = Hairtype.create(name: "2b", description: "Your hair is mostly straight at the roots and falls into more defined S-shaped waves from the mid-lengths to the ends. It is a medium texture with some frizz at the crown.")
+two_c = Hairtype.create(name: "2c", description: "Your waves are more defined and start at the roots, than with curls and ringlets. This texture is typically thick or coarse, and is prone to frizzing.")
+three_a = Hairtype.create(name: "3a", description: "You have big, loose curls and spirals similar in circumference to a piece of thick, sidewalk chalk. Your curls tend to be shiny, with a well-defined S-shape.")
+three_b = Hairtype.create(name: "3b", description: "Your springy curls can vary from ringlets to corkscrews. They are voluminous and have a circumference similar to a Sharpie marker. Type 3b hair tends to be coarse and dense.")
+three_c = Hairtype.create(name: "3c", description: "his often is referred to as curly-coily and tends to be very dense, tightly packed corkscrews that are the circumference of a pencil or a straw. Type 3c hair tends to experience the most volume, but also the most shrinkage of curls.")
+four_a = Hairtype.create(name: "4a", description: "Your dense, springy coils are either wiry or fine, and have the circumference of a crochet needle. They are tightly coiled, with a visible S pattern.")
+four_b = Hairtype.create(name: "4b", description: "Instead of curling or coiling, your hair bends in sharp angles like the letter Z. The curl is tighter and less defined - about the circumference of a pen - with strands that range from fine and thin to wiry and coarse.")
+four_c = Hairtype.create(name: "4c", description: "Your densely packed hair is similar to a 4b, but experiences less definition and more shrinkage. The tightly coiled strand texture ranges from super fine, thin and soft to wiry and coarse. It is very delicate.")
