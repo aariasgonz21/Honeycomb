@@ -10,6 +10,7 @@
 
 Salon.delete_all
 HairStylist.delete_all
+Hairtype.delete_all
 
 coffee_and_cream = Salon.create(name: "Coffee And Cream", price: "$$", location: "Brooklyn, NY", phone_number: "(718) 555-5566", description: "We like our coffee like we like our hair... Black. We specialize in 3b-4c haircuts, braids and twists.")
 #
@@ -35,11 +36,11 @@ michael = HairStylist.create(name: "Michael Jackson", specialty: "haircuts, brai
 #
 janet = HairStylist.create(name: "Janet Jackson", specialty: "bantu knots, senegalese twists", years_of_experience: "7", salon_id: 3)
 
-aj = Customer.create(name: "AJ Baskett", hairtype_id: 4, location: "Queens, NY")
-ana = Customer.create(name: "Ana Arias", hairtype_id: 5, location: "Queens, NY")
-bri = Customer.create(name: "Briana Arnold", hairtype_id: 7, location: "Bronx, NY")
-zakiya = Customer.create(name: "Zakiya Simms", hairtype_id: 9, location: "Brooklyn, NY")
-giselle = Customer.create(name: "Giselle Santiago", hairtype_id: 2, location: "Harlem, NY")
+aj = Customer.create(name: "AJ Baskett", location: "Queens, NY", hairtype_id: 4)
+ana = Customer.create(name: "Ana Arias", location: "Queens, NY", hairtype_id: 5)
+bri = Customer.create(name: "Briana Arnold", location: "Bronx, NY", hairtype_id: 7)
+zakiya = Customer.create(name: "Zakiya Simms", location: "Brooklyn, NY", hairtype_id: 9,)
+giselle = Customer.create(name: "Giselle Santiago", location: "Harlem, NY", hairtype_id: 2)
 
 two_a = Hairtype.create(name: "2a", description: "Your waves are fine and thin with a loose, tousled texture.")
 two_b = Hairtype.create(name: "2b", description: "Your hair is mostly straight at the roots and falls into more defined S-shaped waves from the mid-lengths to the ends. It is a medium texture with some frizz at the crown.")

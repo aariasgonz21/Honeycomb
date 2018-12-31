@@ -4,8 +4,7 @@ class CreateAppointments < ActiveRecord::Migration[5.2]
       t.belongs_to :customer, foreign_key: true
       t.belongs_to :hair_stylist, foreign_key: true
       t.text :date
-      t.text :service
-      t.decimal :price
+      t.belongs_to :service, foreign_key: true
 
       t.timestamps
     end

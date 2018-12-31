@@ -3,7 +3,7 @@ class CustomersController < ApplicationController
   before_action :customer_params, only: [:create, :update]
 
   def show
-    #byebug
+    @hairtype = Hairtype.find(@customer.hairtype_id).name
   end
 
   def new
@@ -11,7 +11,8 @@ class CustomersController < ApplicationController
   end
 
   def create
-    @customer = Customer.new(customer_params)
+    @customer = Customer.create(customer_params)
+    redirect_to customer_path(@customer)
   end
 
   def edit
@@ -19,6 +20,7 @@ class CustomersController < ApplicationController
 
   def update
     @customer.update(customer_params)
+    redirect_to customer_path(@customer)
   end
 
   def delete
@@ -33,7 +35,7 @@ class CustomersController < ApplicationController
   end
 
   def customer_params
-    params.require(:customer).permit(:name, :hairtype, :location)
+    params.require(:customer).permit(:name, :location, :hairtype_id)
   end
 
 end

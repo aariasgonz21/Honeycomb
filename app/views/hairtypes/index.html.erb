@@ -1,0 +1,8 @@
+<h1>Hairtypes</h1>
+
+<% @hairtypes.each do |hairtype| %>
+  <ul style="list-style-type:none;">
+    <li><h3><%= hairtype.name %></h3></li>
+    <p><%= hairtype.description %></p>
+  </ul>
+<% end %>

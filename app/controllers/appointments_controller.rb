@@ -8,5 +8,10 @@ class AppointmentsController < ApplicationController
 
   end
 
+  private
+
+  def appointment_params
+    params.require(:appointment).permit(:customer_id, :hair_stylist_id, :date, :service, )
+  end
 
 end

@@ -1,8 +1,16 @@
 <h1>Create a new profile</h1>
 
-<%= form_for @customers do |f| %>
+<%= form_for @customer do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
+  <br><br>  <!-- change to a class and add line height to 1em-->
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <br><br>
   <%= f.label :hairtype %>
-
+  <%= f.collection_select :hairtype_id, Hairtype.all, :id, :name %>
+  <br><br>
+  <%= f.submit %>
 <% end %>
+
+<%= link_to "Home", root_path %>
