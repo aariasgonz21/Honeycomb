@@ -1,6 +1,6 @@
 class CustomersController < ApplicationController
-  before_action :find_customer, only: [:show, :edit, :update, :destroy]
-  before_action :customer_params, only: [:create, :update]
+  # before_action :find_customer, only: [:show, :edit, :update, :destroy]
+  # before_action :customer_params, only: [:create, :update]
 
   def show
     @hairtype = Hairtype.find(@customer.hairtype_id).name
@@ -11,7 +11,8 @@ class CustomersController < ApplicationController
   end
 
   def create
-    @customer = Customer.create(customer_params)
+    # @customer = Customer.create(customer_params)
+    @customer = Customer.create(params)
     redirect_to customer_path(@customer)
   end
 

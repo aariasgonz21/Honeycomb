@@ -5206,3 +5206,1146 @@ Migrating to CreateServices (20181231214213)
   ↳ db/seeds.rb:53
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "appointments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "customer_id" integer, "hair_stylist_id" integer, "date" text, "service" text, "price" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_customer_id" ON "appointments" ("customer_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_hair_stylist_id" ON "appointments" ("hair_stylist_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "customers"[0m
+  ↳ db/schema.rb:27
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "customers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "location" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "hairtype_id" integer)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE  INDEX "index_customers_on_hairtype_id" ON "customers" ("hairtype_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "hair_stylists"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "hair_stylists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "specialty" text, "years_of_experience" integer, "salon_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (99.9ms)[0m  [1m[35mCREATE  INDEX "index_hair_stylists_on_salon_id" ON "hair_stylists" ("salon_id")[0m
+  ↳ db/schema.rb:36
+  [1m[35m (2.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "hairtypes"[0m
+  ↳ db/schema.rb:46
+  [1m[35m (51.8ms)[0m  [1m[35mCREATE TABLE "hairtypes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:46
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "salons"[0m
+  ↳ db/schema.rb:53
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "salons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "price" text, "location" text, "phone_number" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "description" text)[0m
+  ↳ db/schema.rb:53
+  [1m[35m (6.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "services"[0m
+  ↳ db/schema.rb:63
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "services" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:63
+  [1m[35m (14.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181231214213)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181226205729),
+(20181226210606),
+(20181230235726),
+(20181226205945),
+(20181226211229);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-31 22:05:47.446490"], ["updated_at", "2018-12-31 22:05:47.446490"]]
+  ↳ db/schema.rb:13
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "appointments"[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "customer_id" integer, "hair_stylist_id" integer, "date" text, "service" text, "price" decimal, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_customer_id" ON "appointments" ("customer_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_hair_stylist_id" ON "appointments" ("hair_stylist_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "customers"[0m
+  ↳ db/schema.rb:27
+  [1m[35m (23.4ms)[0m  [1m[35mCREATE TABLE "customers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "location" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "hairtype_id" integer)[0m
+  ↳ db/schema.rb:27
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE  INDEX "index_customers_on_hairtype_id" ON "customers" ("hairtype_id")[0m
+  ↳ db/schema.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "hair_stylists"[0m
+  ↳ db/schema.rb:36
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "hair_stylists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "specialty" text, "years_of_experience" integer, "salon_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:36
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX "index_hair_stylists_on_salon_id" ON "hair_stylists" ("salon_id")[0m
+  ↳ db/schema.rb:36
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "hairtypes"[0m
+  ↳ db/schema.rb:46
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "hairtypes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:46
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "salons"[0m
+  ↳ db/schema.rb:53
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "salons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "price" text, "location" text, "phone_number" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "description" text)[0m
+  ↳ db/schema.rb:53
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "services"[0m
+  ↳ db/schema.rb:63
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "services" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:63
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20181231214213)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20181226205729),
+(20181226210606),
+(20181230235726),
+(20181226205945),
+(20181226211229);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (19.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-12-31 22:05:47.632459"], ["updated_at", "2018-12-31 22:05:47.632459"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.9ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2018-12-31 22:05:47.638880"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (18.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mSalon Destroy (2.4ms)[0m  [1m[31mDELETE FROM "salons"[0m
+  ↳ db/seeds.rb:11
+  [1m[36mHairStylist Destroy (2.4ms)[0m  [1m[31mDELETE FROM "hair_stylists"[0m
+  ↳ db/seeds.rb:12
+  [1m[36mHairtype Destroy (4.3ms)[0m  [1m[31mDELETE FROM "hairtypes"[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mSalon Create (0.6ms)[0m  [1m[32mINSERT INTO "salons" ("name", "price", "location", "phone_number", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Coffee And Cream"], ["price", "$$"], ["location", "Brooklyn, NY"], ["phone_number", "(718) 555-5566"], ["created_at", "2018-12-31 22:05:47.725946"], ["updated_at", "2018-12-31 22:05:47.725946"], ["description", "We like our coffee like we like our hair... Black. We specialize in 3b-4c haircuts, braids and twists."]]
+  ↳ db/seeds.rb:15
+  [1m[35m (28.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mSalon Create (1.2ms)[0m  [1m[32mINSERT INTO "salons" ("name", "price", "location", "phone_number", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Killing Me Softly"], ["price", "$$$"], ["location", "Harlem, NY"], ["phone_number", "(212) 555-8888"], ["created_at", "2018-12-31 22:05:47.765938"], ["updated_at", "2018-12-31 22:05:47.765938"], ["description", "Kill and slay your look with us! We specialize in haircuts, braids, dreads, & wash n'gos!"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[36mSalon Create (0.6ms)[0m  [1m[32mINSERT INTO "salons" ("name", "price", "location", "phone_number", "created_at", "updated_at", "description") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Brenda's Hair Salon"], ["price", "$"], ["location", "Jamaica, NY"], ["phone_number", "(718) 555-1212"], ["created_at", "2018-12-31 22:05:47.782999"], ["updated_at", "2018-12-31 22:05:47.782999"], ["description", "We've got washing and straightening!"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (15.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mHairStylist Create (0.7ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Lori Styles"], ["specialty", "Haircuts, wash n' go"], ["years_of_experience", 3], ["salon_id", 1], ["created_at", "2018-12-31 22:05:47.879900"], ["updated_at", "2018-12-31 22:05:47.879900"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mHairStylist Create (0.7ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "James Hughes"], ["specialty", "Twists, Haircuts"], ["years_of_experience", 7], ["salon_id", 1], ["created_at", "2018-12-31 22:05:47.890014"], ["updated_at", "2018-12-31 22:05:47.890014"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mHairStylist Create (0.6ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Layla Jones"], ["specialty", "Braids, Twists"], ["years_of_experience", 5], ["salon_id", 1], ["created_at", "2018-12-31 22:05:47.900155"], ["updated_at", "2018-12-31 22:05:47.900155"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (4.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[36mHairStylist Create (0.6ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Milan Sacher"], ["specialty", "haircuts"], ["years_of_experience", 1], ["salon_id", 2], ["created_at", "2018-12-31 22:05:47.925214"], ["updated_at", "2018-12-31 22:05:47.925214"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mHairStylist Create (0.7ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Jarrian McLean"], ["specialty", "dreads, wash n' gos"], ["years_of_experience", 4], ["salon_id", 2], ["created_at", "2018-12-31 22:05:47.943574"], ["updated_at", "2018-12-31 22:05:47.943574"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mHairStylist Create (2.3ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Imani Josephs"], ["specialty", "twists, haircuts"], ["salon_id", 2], ["created_at", "2018-12-31 22:05:47.974990"], ["updated_at", "2018-12-31 22:05:47.974990"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mHairStylist Create (0.7ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "LaToya Jackson"], ["specialty", "straightening, haircuts"], ["years_of_experience", 6], ["salon_id", 3], ["created_at", "2018-12-31 22:05:47.998071"], ["updated_at", "2018-12-31 22:05:47.998071"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (42.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mHairStylist Create (7.0ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Michael Jackson"], ["specialty", "haircuts, braids"], ["years_of_experience", 2], ["salon_id", 3], ["created_at", "2018-12-31 22:05:48.045421"], ["updated_at", "2018-12-31 22:05:48.045421"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (34.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mHairStylist Create (0.7ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Janet Jackson"], ["specialty", "bantu knots, senegalese twists"], ["years_of_experience", 7], ["salon_id", 3], ["created_at", "2018-12-31 22:05:48.091744"], ["updated_at", "2018-12-31 22:05:48.091744"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mHairtype Create (3.7ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "2a"], ["description", "Your waves are fine and thin with a loose, tousled texture."], ["created_at", "2018-12-31 22:05:48.273877"], ["updated_at", "2018-12-31 22:05:48.273877"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (30.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[36mHairtype Create (0.7ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "2b"], ["description", "Your hair is mostly straight at the roots and falls into more defined S-shaped waves from the mid-lengths to the ends. It is a medium texture with some frizz at the crown."], ["created_at", "2018-12-31 22:05:48.311704"], ["updated_at", "2018-12-31 22:05:48.311704"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[36mHairtype Create (0.7ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "2c"], ["description", "Your waves are more defined and start at the roots, than with curls and ringlets. This texture is typically thick or coarse, and is prone to frizzing."], ["created_at", "2018-12-31 22:05:48.334450"], ["updated_at", "2018-12-31 22:05:48.334450"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mHairtype Create (1.7ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "3a"], ["description", "You have big, loose curls and spirals similar in circumference to a piece of thick, sidewalk chalk. Your curls tend to be shiny, with a well-defined S-shape."], ["created_at", "2018-12-31 22:05:48.347570"], ["updated_at", "2018-12-31 22:05:48.347570"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (11.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:49
+  [1m[36mHairtype Create (0.6ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "3b"], ["description", "Your springy curls can vary from ringlets to corkscrews. They are voluminous and have a circumference similar to a Sharpie marker. Type 3b hair tends to be coarse and dense."], ["created_at", "2018-12-31 22:05:48.378348"], ["updated_at", "2018-12-31 22:05:48.378348"]]
+  ↳ db/seeds.rb:49
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mHairtype Create (4.1ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "3c"], ["description", "his often is referred to as curly-coily and tends to be very dense, tightly packed corkscrews that are the circumference of a pencil or a straw. Type 3c hair tends to experience the most volume, but also the most shrinkage of curls."], ["created_at", "2018-12-31 22:05:48.388195"], ["updated_at", "2018-12-31 22:05:48.388195"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mHairtype Create (0.7ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "4a"], ["description", "Your dense, springy coils are either wiry or fine, and have the circumference of a crochet needle. They are tightly coiled, with a visible S pattern."], ["created_at", "2018-12-31 22:05:48.401113"], ["updated_at", "2018-12-31 22:05:48.401113"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[36mHairtype Create (0.6ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "4b"], ["description", "Instead of curling or coiling, your hair bends in sharp angles like the letter Z. The curl is tighter and less defined - about the circumference of a pen - with strands that range from fine and thin to wiry and coarse."], ["created_at", "2018-12-31 22:05:48.406367"], ["updated_at", "2018-12-31 22:05:48.406367"]]
+  ↳ db/seeds.rb:52
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[36mHairtype Create (2.2ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "4c"], ["description", "Your densely packed hair is similar to a 4b, but experiences less definition and more shrinkage. The tightly coiled strand texture ranges from super fine, thin and soft to wiry and coarse. It is very delicate."], ["created_at", "2018-12-31 22:05:48.413948"], ["updated_at", "2018-12-31 22:05:48.413948"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (14.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:53
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2018-12-31 17:05:53 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  Rendered hair_stylists/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 549ms (Views: 519.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/customers/1" for 127.0.0.1 at 2018-12-31 17:06:01 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:34
+Completed 404 Not Found in 16ms (ActiveRecord: 3.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Customer with 'id'=1):
+  
+app/controllers/customers_controller.rb:34:in `find_customer'
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateServices (20181231214213)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "services"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181231214213"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateHairtypes (20181230235726)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "hairtypes"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181230235726"]]
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAppointments (20181226211229)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "appointments"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181226211229"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateHairStylists (20181226210606)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "hair_stylists"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181226210606"]]
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateSalons (20181226205945)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "salons"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181226205945"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCustomers (20181226205729)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "customers"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181226205729"]]
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCustomers (20181226205729)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181226205729_create_customers.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "customers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "location" text, "hairtype_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_8b1251a395"
+FOREIGN KEY ("hairtype_id")
+  REFERENCES "hairtypes" ("id")
+)[0m
+  ↳ db/migrate/20181226205729_create_customers.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_customers_on_hairtype_id" ON "customers" ("hairtype_id")[0m
+  ↳ db/migrate/20181226205729_create_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181226205729"]]
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateSalons (20181226205945)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "salons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "price" text, "location" text, "phone_number" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181226205945_create_salons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181226205945"]]
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateHairStylists (20181226210606)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "hair_stylists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "specialty" text, "years_of_experience" integer, "salon_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_cabc2903ed"
+FOREIGN KEY ("salon_id")
+  REFERENCES "salons" ("id")
+)[0m
+  ↳ db/migrate/20181226210606_create_hair_stylists.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_hair_stylists_on_salon_id" ON "hair_stylists" ("salon_id")[0m
+  ↳ db/migrate/20181226210606_create_hair_stylists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181226210606"]]
+  ↳ bin/rails:9
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAppointments (20181226211229)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "customer_id" integer, "hair_stylist_id" integer, "service_id" integer, "date" text, "time" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_882571afb2"
+FOREIGN KEY ("customer_id")
+  REFERENCES "customers" ("id")
+, CONSTRAINT "fk_rails_2c65c2e9ff"
+FOREIGN KEY ("hair_stylist_id")
+  REFERENCES "hair_stylists" ("id")
+, CONSTRAINT "fk_rails_486091c262"
+FOREIGN KEY ("service_id")
+  REFERENCES "services" ("id")
+)[0m
+  ↳ db/migrate/20181226211229_create_appointments.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_customer_id" ON "appointments" ("customer_id")[0m
+  ↳ db/migrate/20181226211229_create_appointments.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_hair_stylist_id" ON "appointments" ("hair_stylist_id")[0m
+  ↳ db/migrate/20181226211229_create_appointments.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_service_id" ON "appointments" ("service_id")[0m
+  ↳ db/migrate/20181226211229_create_appointments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181226211229"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateHairtypes (20181230235726)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "hairtypes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "description" text, "img_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181230235726_create_hairtypes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181230235726"]]
+  ↳ bin/rails:9
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateServices (20181231214213)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "services" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181231214213_create_services.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181231214213"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateServices (20181231214213)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "services"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181231214213"]]
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateHairtypes (20181230235726)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE "hairtypes"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181230235726"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAppointments (20181226211229)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "appointments"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181226211229"]]
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateHairStylists (20181226210606)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "hair_stylists"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181226210606"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateSalons (20181226205945)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "salons"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181226205945"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCustomers (20181226205729)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "customers"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20181226205729"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCustomers (20181226205729)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20181226205729_create_customers.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "customers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "location" text, "hairtype_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_8b1251a395"
+FOREIGN KEY ("hairtype_id")
+  REFERENCES "hairtypes" ("id")
+)[0m
+  ↳ db/migrate/20181226205729_create_customers.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_customers_on_hairtype_id" ON "customers" ("hairtype_id")[0m
+  ↳ db/migrate/20181226205729_create_customers.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181226205729"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateSalons (20181226205945)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "salons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "description" text, "price" text, "location" text, "phone_number" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181226205945_create_salons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181226205945"]]
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateHairStylists (20181226210606)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "hair_stylists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "specialty" text, "years_of_experience" integer, "salon_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_cabc2903ed"
+FOREIGN KEY ("salon_id")
+  REFERENCES "salons" ("id")
+)[0m
+  ↳ db/migrate/20181226210606_create_hair_stylists.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_hair_stylists_on_salon_id" ON "hair_stylists" ("salon_id")[0m
+  ↳ db/migrate/20181226210606_create_hair_stylists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181226210606"]]
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAppointments (20181226211229)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "appointments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "customer_id" integer, "hair_stylist_id" integer, "service_id" integer, "date" text, "time" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_882571afb2"
+FOREIGN KEY ("customer_id")
+  REFERENCES "customers" ("id")
+, CONSTRAINT "fk_rails_2c65c2e9ff"
+FOREIGN KEY ("hair_stylist_id")
+  REFERENCES "hair_stylists" ("id")
+, CONSTRAINT "fk_rails_486091c262"
+FOREIGN KEY ("service_id")
+  REFERENCES "services" ("id")
+)[0m
+  ↳ db/migrate/20181226211229_create_appointments.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_customer_id" ON "appointments" ("customer_id")[0m
+  ↳ db/migrate/20181226211229_create_appointments.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_hair_stylist_id" ON "appointments" ("hair_stylist_id")[0m
+  ↳ db/migrate/20181226211229_create_appointments.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_appointments_on_service_id" ON "appointments" ("service_id")[0m
+  ↳ db/migrate/20181226211229_create_appointments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181226211229"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateHairtypes (20181230235726)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "hairtypes" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" text, "description" text, "img_url" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181230235726_create_hairtypes.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181230235726"]]
+  ↳ bin/rails:9
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateServices (20181231214213)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "services" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20181231214213_create_services.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181231214213"]]
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mSalon Create (0.5ms)[0m  [1m[32mINSERT INTO "salons" ("name", "description", "price", "location", "phone_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Coffee And Cream"], ["description", "We like our coffee like we like our hair... Black. We specialize in 3b-4c haircuts, braids and twists."], ["price", "$$"], ["location", "Brooklyn, NY"], ["phone_number", "(718) 555-5566"], ["created_at", "2018-12-31 22:12:22.618944"], ["updated_at", "2018-12-31 22:12:22.618944"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mSalon Create (0.5ms)[0m  [1m[32mINSERT INTO "salons" ("name", "description", "price", "location", "phone_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Killing Me Softly"], ["description", "Kill and slay your look with us! We specialize in haircuts, braids, dreads, & wash n'gos!"], ["price", "$$$"], ["location", "Harlem, NY"], ["phone_number", "(212) 555-8888"], ["created_at", "2018-12-31 22:12:22.624321"], ["updated_at", "2018-12-31 22:12:22.624321"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[36mSalon Create (0.4ms)[0m  [1m[32mINSERT INTO "salons" ("name", "description", "price", "location", "phone_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Brenda's Hair Salon"], ["description", "We've got washing and straightening!"], ["price", "$"], ["location", "Jamaica, NY"], ["phone_number", "(718) 555-1212"], ["created_at", "2018-12-31 22:12:22.628785"], ["updated_at", "2018-12-31 22:12:22.628785"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mHairStylist Create (0.7ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Lori Styles"], ["specialty", "Haircuts, wash n' go"], ["years_of_experience", 3], ["salon_id", 1], ["created_at", "2018-12-31 22:12:22.668943"], ["updated_at", "2018-12-31 22:12:22.668943"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mHairStylist Create (0.7ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "James Hughes"], ["specialty", "Twists, Haircuts"], ["years_of_experience", 7], ["salon_id", 1], ["created_at", "2018-12-31 22:12:22.686711"], ["updated_at", "2018-12-31 22:12:22.686711"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mHairStylist Create (0.7ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Layla Jones"], ["specialty", "Braids, Twists"], ["years_of_experience", 5], ["salon_id", 1], ["created_at", "2018-12-31 22:12:22.693968"], ["updated_at", "2018-12-31 22:12:22.693968"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[36mHairStylist Create (0.8ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Milan Sacher"], ["specialty", "haircuts"], ["years_of_experience", 1], ["salon_id", 2], ["created_at", "2018-12-31 22:12:22.702051"], ["updated_at", "2018-12-31 22:12:22.702051"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mHairStylist Create (0.8ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Jarrian McLean"], ["specialty", "dreads, wash n' gos"], ["years_of_experience", 4], ["salon_id", 2], ["created_at", "2018-12-31 22:12:22.714594"], ["updated_at", "2018-12-31 22:12:22.714594"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (27.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[36mSalon Load (0.5ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mHairStylist Create (0.8ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Imani Josephs"], ["specialty", "twists, haircuts"], ["salon_id", 2], ["created_at", "2018-12-31 22:12:22.751370"], ["updated_at", "2018-12-31 22:12:22.751370"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mHairStylist Create (0.7ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "LaToya Jackson"], ["specialty", "straightening, haircuts"], ["years_of_experience", 6], ["salon_id", 3], ["created_at", "2018-12-31 22:12:22.761550"], ["updated_at", "2018-12-31 22:12:22.761550"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mHairStylist Create (0.7ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Michael Jackson"], ["specialty", "haircuts, braids"], ["years_of_experience", 2], ["salon_id", 3], ["created_at", "2018-12-31 22:12:22.768250"], ["updated_at", "2018-12-31 22:12:22.768250"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mHairStylist Create (0.8ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Janet Jackson"], ["specialty", "bantu knots, senegalese twists"], ["years_of_experience", 7], ["salon_id", 3], ["created_at", "2018-12-31 22:12:22.778167"], ["updated_at", "2018-12-31 22:12:22.778167"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mHairtype Create (0.7ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "2a"], ["description", "Your waves are fine and thin with a loose, tousled texture."], ["created_at", "2018-12-31 22:12:22.964381"], ["updated_at", "2018-12-31 22:12:22.964381"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[36mHairtype Create (0.8ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "2b"], ["description", "Your hair is mostly straight at the roots and falls into more defined S-shaped waves from the mid-lengths to the ends. It is a medium texture with some frizz at the crown."], ["created_at", "2018-12-31 22:12:22.973349"], ["updated_at", "2018-12-31 22:12:22.973349"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (7.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[36mHairtype Create (0.7ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "2c"], ["description", "Your waves are more defined and start at the roots, than with curls and ringlets. This texture is typically thick or coarse, and is prone to frizzing."], ["created_at", "2018-12-31 22:12:22.984260"], ["updated_at", "2018-12-31 22:12:22.984260"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mHairtype Create (0.7ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "3a"], ["description", "You have big, loose curls and spirals similar in circumference to a piece of thick, sidewalk chalk. Your curls tend to be shiny, with a well-defined S-shape."], ["created_at", "2018-12-31 22:12:22.991547"], ["updated_at", "2018-12-31 22:12:22.991547"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:49
+  [1m[36mHairtype Create (0.9ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "3b"], ["description", "Your springy curls can vary from ringlets to corkscrews. They are voluminous and have a circumference similar to a Sharpie marker. Type 3b hair tends to be coarse and dense."], ["created_at", "2018-12-31 22:12:23.004541"], ["updated_at", "2018-12-31 22:12:23.004541"]]
+  ↳ db/seeds.rb:49
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mHairtype Create (0.7ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "3c"], ["description", "his often is referred to as curly-coily and tends to be very dense, tightly packed corkscrews that are the circumference of a pencil or a straw. Type 3c hair tends to experience the most volume, but also the most shrinkage of curls."], ["created_at", "2018-12-31 22:12:23.010789"], ["updated_at", "2018-12-31 22:12:23.010789"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mHairtype Create (1.0ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "4a"], ["description", "Your dense, springy coils are either wiry or fine, and have the circumference of a crochet needle. They are tightly coiled, with a visible S pattern."], ["created_at", "2018-12-31 22:12:23.016508"], ["updated_at", "2018-12-31 22:12:23.016508"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (28.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[36mHairtype Create (0.9ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "4b"], ["description", "Instead of curling or coiling, your hair bends in sharp angles like the letter Z. The curl is tighter and less defined - about the circumference of a pen - with strands that range from fine and thin to wiry and coarse."], ["created_at", "2018-12-31 22:12:23.054667"], ["updated_at", "2018-12-31 22:12:23.054667"]]
+  ↳ db/seeds.rb:52
+  [1m[35m (23.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[36mHairtype Create (0.7ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "4c"], ["description", "Your densely packed hair is similar to a 4b, but experiences less definition and more shrinkage. The tightly coiled strand texture ranges from super fine, thin and soft to wiry and coarse. It is very delicate."], ["created_at", "2018-12-31 22:12:23.097743"], ["updated_at", "2018-12-31 22:12:23.097743"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:53
+Started GET "/customers/1" for 127.0.0.1 at 2018-12-31 17:12:27 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:34
+Completed 404 Not Found in 7ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Customer with 'id'=1):
+  
+app/controllers/customers_controller.rb:34:in `find_customer'
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mHairtype Load (0.5ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mHairtype Load (0.4ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mHairtype Create (0.9ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "1"], ["description", "straight"], ["created_at", "2018-12-31 22:17:32.042804"], ["updated_at", "2018-12-31 22:17:32.042804"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Create (1.0ms)[0m  [1m[32mINSERT INTO "customers" ("name", "location", "hairtype_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ana"], ["location", "WillyB"], ["hairtype_id", 5], ["created_at", "2018-12-31 22:23:30.392843"], ["updated_at", "2018-12-31 22:23:30.392843"]]
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mCustomer Destroy (0.9ms)[0m  [1m[31mDELETE FROM "customers" WHERE "customers"."id" = ?[0m  [["id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" ORDER BY "customers"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mSalon Destroy (2.1ms)[0m  [1m[31mDELETE FROM "salons"[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mSalon Create (0.8ms)[0m  [1m[32mINSERT INTO "salons" ("name", "description", "price", "location", "phone_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Coffee And Cream"], ["description", "We like our coffee like we like our hair... Black. We specialize in 3b-4c haircuts, braids and twists."], ["price", "$$"], ["location", "Brooklyn, NY"], ["phone_number", "(718) 555-5566"], ["created_at", "2018-12-31 22:26:59.653582"], ["updated_at", "2018-12-31 22:26:59.653582"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mSalon Create (0.4ms)[0m  [1m[32mINSERT INTO "salons" ("name", "description", "price", "location", "phone_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Killing Me Softly"], ["description", "Kill and slay your look with us! We specialize in haircuts, braids, dreads, & wash n'gos!"], ["price", "$$$"], ["location", "Harlem, NY"], ["phone_number", "(212) 555-8888"], ["created_at", "2018-12-31 22:26:59.659324"], ["updated_at", "2018-12-31 22:26:59.659324"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[36mSalon Create (0.6ms)[0m  [1m[32mINSERT INTO "salons" ("name", "description", "price", "location", "phone_number", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Brenda's Hair Salon"], ["description", "We've got washing and straightening!"], ["price", "$"], ["location", "Jamaica, NY"], ["phone_number", "(718) 555-1212"], ["created_at", "2018-12-31 22:26:59.664428"], ["updated_at", "2018-12-31 22:26:59.664428"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mHairStylist Create (0.7ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Lori Styles"], ["specialty", "Haircuts, wash n' go"], ["years_of_experience", 3], ["salon_id", 1], ["created_at", "2018-12-31 22:26:59.708979"], ["updated_at", "2018-12-31 22:26:59.708979"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (69.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+  [1m[36mHairStylist Create (0.7ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "James Hughes"], ["specialty", "Twists, Haircuts"], ["years_of_experience", 7], ["salon_id", 1], ["created_at", "2018-12-31 22:26:59.797005"], ["updated_at", "2018-12-31 22:26:59.797005"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:25
+  [1m[36mHairStylist Create (1.6ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Layla Jones"], ["specialty", "Braids, Twists"], ["years_of_experience", 5], ["salon_id", 1], ["created_at", "2018-12-31 22:26:59.808812"], ["updated_at", "2018-12-31 22:26:59.808812"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mSalon Load (0.6ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+  [1m[36mHairStylist Create (0.9ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Milan Sacher"], ["specialty", "haircuts"], ["years_of_experience", 1], ["salon_id", 2], ["created_at", "2018-12-31 22:26:59.818588"], ["updated_at", "2018-12-31 22:26:59.818588"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (3.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:29
+  [1m[36mHairStylist Create (0.6ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Jarrian McLean"], ["specialty", "dreads, wash n' gos"], ["years_of_experience", 4], ["salon_id", 2], ["created_at", "2018-12-31 22:26:59.829347"], ["updated_at", "2018-12-31 22:26:59.829347"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (8.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+  [1m[36mHairStylist Create (6.6ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Imani Josephs"], ["specialty", "twists, haircuts"], ["salon_id", 2], ["created_at", "2018-12-31 22:26:59.856827"], ["updated_at", "2018-12-31 22:26:59.856827"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:33
+  [1m[36mHairStylist Create (0.6ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "LaToya Jackson"], ["specialty", "straightening, haircuts"], ["years_of_experience", 6], ["salon_id", 3], ["created_at", "2018-12-31 22:26:59.879478"], ["updated_at", "2018-12-31 22:26:59.879478"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:33
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+  [1m[36mHairStylist Create (0.7ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Michael Jackson"], ["specialty", "haircuts, braids"], ["years_of_experience", 2], ["salon_id", 3], ["created_at", "2018-12-31 22:26:59.885993"], ["updated_at", "2018-12-31 22:26:59.885993"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mHairStylist Create (0.7ms)[0m  [1m[32mINSERT INTO "hair_stylists" ("name", "specialty", "years_of_experience", "salon_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Janet Jackson"], ["specialty", "bantu knots, senegalese twists"], ["years_of_experience", 7], ["salon_id", 3], ["created_at", "2018-12-31 22:26:59.894720"], ["updated_at", "2018-12-31 22:26:59.894720"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[36mCustomer Create (0.7ms)[0m  [1m[32mINSERT INTO "customers" ("name", "location", "hairtype_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "AJ Baskett"], ["location", "Queens, NY"], ["hairtype_id", 4], ["created_at", "2018-12-31 22:26:59.936746"], ["updated_at", "2018-12-31 22:26:59.936746"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mCustomer Create (1.0ms)[0m  [1m[32mINSERT INTO "customers" ("name", "location", "hairtype_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Ana Arias"], ["location", "Queens, NY"], ["hairtype_id", 5], ["created_at", "2018-12-31 22:26:59.942417"], ["updated_at", "2018-12-31 22:26:59.942417"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (45.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mCustomer Create (0.7ms)[0m  [1m[32mINSERT INTO "customers" ("name", "location", "hairtype_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Briana Arnold"], ["location", "Bronx, NY"], ["hairtype_id", 7], ["created_at", "2018-12-31 22:27:00.014609"], ["updated_at", "2018-12-31 22:27:00.014609"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mCustomer Create (1.6ms)[0m  [1m[32mINSERT INTO "customers" ("name", "location", "hairtype_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Zakiya Simms"], ["location", "Brooklyn, NY"], ["hairtype_id", 9], ["created_at", "2018-12-31 22:27:00.032725"], ["updated_at", "2018-12-31 22:27:00.032725"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:43
+  [1m[36mCustomer Create (0.8ms)[0m  [1m[32mINSERT INTO "customers" ("name", "location", "hairtype_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Giselle Santiago"], ["location", "Harlem, NY"], ["hairtype_id", 2], ["created_at", "2018-12-31 22:27:00.039740"], ["updated_at", "2018-12-31 22:27:00.039740"]]
+  ↳ db/seeds.rb:43
+  [1m[35m (18.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mHairtype Create (22.4ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "2a"], ["description", "Your waves are fine and thin with a loose, tousled texture."], ["created_at", "2018-12-31 22:27:00.085046"], ["updated_at", "2018-12-31 22:27:00.085046"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[36mHairtype Create (0.7ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "2b"], ["description", "Your hair is mostly straight at the roots and falls into more defined S-shaped waves from the mid-lengths to the ends. It is a medium texture with some frizz at the crown."], ["created_at", "2018-12-31 22:27:00.127905"], ["updated_at", "2018-12-31 22:27:00.127905"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (4.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[36mHairtype Create (1.0ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "2c"], ["description", "Your waves are more defined and start at the roots, than with curls and ringlets. This texture is typically thick or coarse, and is prone to frizzing."], ["created_at", "2018-12-31 22:27:00.135893"], ["updated_at", "2018-12-31 22:27:00.135893"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mHairtype Create (0.6ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "3a"], ["description", "You have big, loose curls and spirals similar in circumference to a piece of thick, sidewalk chalk. Your curls tend to be shiny, with a well-defined S-shape."], ["created_at", "2018-12-31 22:27:00.146836"], ["updated_at", "2018-12-31 22:27:00.146836"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:49
+  [1m[36mHairtype Create (0.6ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "3b"], ["description", "Your springy curls can vary from ringlets to corkscrews. They are voluminous and have a circumference similar to a Sharpie marker. Type 3b hair tends to be coarse and dense."], ["created_at", "2018-12-31 22:27:00.162267"], ["updated_at", "2018-12-31 22:27:00.162267"]]
+  ↳ db/seeds.rb:49
+  [1m[35m (23.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[36mHairtype Create (2.5ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "3c"], ["description", "his often is referred to as curly-coily and tends to be very dense, tightly packed corkscrews that are the circumference of a pencil or a straw. Type 3c hair tends to experience the most volume, but also the most shrinkage of curls."], ["created_at", "2018-12-31 22:27:00.194877"], ["updated_at", "2018-12-31 22:27:00.194877"]]
+  ↳ db/seeds.rb:50
+  [1m[35m (17.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:50
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[36mHairtype Create (0.6ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "4a"], ["description", "Your dense, springy coils are either wiry or fine, and have the circumference of a crochet needle. They are tightly coiled, with a visible S pattern."], ["created_at", "2018-12-31 22:27:00.246295"], ["updated_at", "2018-12-31 22:27:00.246295"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[36mHairtype Create (0.7ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "4b"], ["description", "Instead of curling or coiling, your hair bends in sharp angles like the letter Z. The curl is tighter and less defined - about the circumference of a pen - with strands that range from fine and thin to wiry and coarse."], ["created_at", "2018-12-31 22:27:00.262635"], ["updated_at", "2018-12-31 22:27:00.262635"]]
+  ↳ db/seeds.rb:52
+  [1m[35m (21.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:52
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[36mHairtype Create (0.7ms)[0m  [1m[32mINSERT INTO "hairtypes" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "4c"], ["description", "Your densely packed hair is similar to a 4b, but experiences less definition and more shrinkage. The tightly coiled strand texture ranges from super fine, thin and soft to wiry and coarse. It is very delicate."], ["created_at", "2018-12-31 22:27:00.297041"], ["updated_at", "2018-12-31 22:27:00.297041"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:53
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/customers/1" for 127.0.0.1 at 2018-12-31 17:28:00 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `hairtype_id' for nil:NilClass):
+  
+app/controllers/customers_controller.rb:6:in `show'
