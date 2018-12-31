@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_30_235726) do
+ActiveRecord::Schema.define(version: 2018_12_31_004547) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "customer_id"
@@ -26,10 +26,11 @@ ActiveRecord::Schema.define(version: 2018_12_30_235726) do
 
   create_table "customers", force: :cascade do |t|
     t.text "name"
-    t.text "hairtype"
     t.text "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "hairtype_id"
+    t.index ["hairtype_id"], name: "index_customers_on_hairtype_id"
   end
 
   create_table "hair_stylists", force: :cascade do |t|
