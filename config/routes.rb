@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :hairtypes
   resources :hair_stylists, only: :show do
     resources :appointments, only: [:new, :create, :destroy]
   end
