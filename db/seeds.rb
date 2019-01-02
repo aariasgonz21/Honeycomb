@@ -8,9 +8,9 @@
 
 #Salon Ex --
 
-# Salon.delete_all
-# HairStylist.delete_all
-# Hairtype.delete_all
+Salon.delete_all
+HairStylist.delete_all
+Hairtype.delete_all
 
 coffee_and_cream = Salon.create(name: "Coffee And Cream", price: "$$", location: "Brooklyn, NY", phone_number: "(718) 555-5566", description: "We like our coffee like we like our hair... Black. We specialize in 3b-4c haircuts, braids and twists.")
 #
