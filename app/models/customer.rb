@@ -1,8 +1,8 @@
 class Customer < ApplicationRecord
   has_many :appointments
-  has_many :hair_stylists, through: :appointments
+  has_many :services, through: :appointments
   belongs_to :hairtype
-  before_save { email.downcase! }  
+  before_save { email.downcase! }
 
   validates :name, presence: true, length: { maximum: 30 }
   validates :email, presence: true, length: { maximum: 30 }

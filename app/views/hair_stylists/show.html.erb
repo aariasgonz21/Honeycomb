@@ -2,3 +2,10 @@
 <h5> Years of Experience: <%= @hair_stylist.years_of_experience %></h5>
 
 <h4>Specialty: <%= @hair_stylist.specialty %></h4>
+
+<h5>Services Offered: </h5>
+<ul>
+  <% @hair_stylist.services.each do |service| %>
+      <li><%= service.name %>  <%= service.price %></li>
+  <% end %>
+</ul>
