@@ -6,6 +6,9 @@
 
 <h4>Hairtype: <%= @hairtype %> </h4>
 
-<h4>Upcoming Appointments</h4>
+<h4>Upcoming Appointments</h4><br>
+<%= link_to "Make an Apointment", salons_path%><br>
 
-<%= link_to "Edit Your Profile", edit_customer_path(@customer)%>
+<%= link_to "Edit Your Profile", edit_customer_path(@customer)%><br>
+
+<%= link_to "Back to Home", root_path %>

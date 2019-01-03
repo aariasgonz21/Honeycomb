@@ -8,9 +8,10 @@
 
 #Salon Ex --
 
-Salon.delete_all
-HairStylist.delete_all
-Hairtype.delete_all
+Salon.destroy_all
+Customer.destroy_all
+HairStylist.destroy_all
+Hairtype.destroy_all
 
 coffee_and_cream = Salon.create(name: "Coffee And Cream", price: "$$", location: "Brooklyn, NY", phone_number: "(718) 555-5566", description: "We like our coffee like we like our hair... Black. We specialize in 3b-4c haircuts, braids and twists.")
 #
@@ -18,29 +19,23 @@ killing_me_softly = Salon.create(name: "Killing Me Softly", price: "$$$", locati
 
 brendas_hair = Salon.create(name: "Brenda's Hair Salon", price: "$", location: "Jamaica, NY", phone_number: "(718) 555-1212", description: "We've got washing and straightening!")
 
-lori = HairStylist.create(name: "Lori Styles", specialty: "Haircuts, wash n' go", years_of_experience: "3", salon_id: 1)
+lori = HairStylist.create(name: "Lori Styles", specialty: "Haircuts, wash n' go", years_of_experience: "3", salon: coffee_and_cream)
 
-james = HairStylist.create(name: "James Hughes", specialty: "Twists, Haircuts", years_of_experience: "7", salon_id: 1)
+james = HairStylist.create(name: "James Hughes", specialty: "Twists, Haircuts", years_of_experience: "7", salon: coffee_and_cream)
 
-layla = HairStylist.create(name: "Layla Jones", specialty: "Braids, Twists", years_of_experience: "5", salon_id: 1)
+layla = HairStylist.create(name: "Layla Jones", specialty: "Braids, Twists", years_of_experience: "5", salon: coffee_and_cream)
 
-milan = HairStylist.create(name: "Milan Sacher", specialty: "haircuts", years_of_experience: "1", salon_id: 2)
+milan = HairStylist.create(name: "Milan Sacher", specialty: "haircuts", years_of_experience: "1", salon: brendas_hair)
 #
-jarrian = HairStylist.create(name: "Jarrian McLean", specialty: "dreads, wash n' gos", years_of_experience: "4", salon_id: 2)
+jarrian = HairStylist.create(name: "Jarrian McLean", specialty: "dreads, wash n' gos", years_of_experience: "4", salon: brendas_hair)
 #
-imani = HairStylist.create(name: "Imani Josephs", specialty: "twists, haircuts", years_of_experience: "", salon_id: 2)
+imani = HairStylist.create(name: "Imani Josephs", specialty: "twists, haircuts", years_of_experience: "4", salon: brendas_hair)
 #
-latoya = HairStylist.create(name: "LaToya Jackson", specialty: "straightening, haircuts", years_of_experience: "6", salon_id: 3)
+latoya = HairStylist.create(name: "LaToya Jackson", specialty: "straightening, haircuts", years_of_experience: "6", salon: killing_me_softly)
 #
-michael = HairStylist.create(name: "Michael Jackson", specialty: "haircuts, braids", years_of_experience: "2", salon_id: 3)
+michael = HairStylist.create(name: "Michael Jackson", specialty: "haircuts, braids", years_of_experience: "2", salon: killing_me_softly)
 #
-janet = HairStylist.create(name: "Janet Jackson", specialty: "bantu knots, senegalese twists", years_of_experience: "7", salon_id: 3)
-
-aj = Customer.create(name: "AJ Baskett", location: "Queens, NY", hairtype_id: 4)
-ana = Customer.create(name: "Ana Arias", location: "Queens, NY", hairtype_id: 5)
-bri = Customer.create(name: "Briana Arnold", location: "Bronx, NY", hairtype_id: 7)
-zakiya = Customer.create(name: "Zakiya Simms", location: "Brooklyn, NY", hairtype_id: 9,)
-giselle = Customer.create(name: "Giselle Santiago", location: "Harlem, NY", hairtype_id: 2)
+janet = HairStylist.create(name: "Janet Jackson", specialty: "bantu knots, senegalese twists", years_of_experience: "7", salon: killing_me_softly)
 
 two_a = Hairtype.create(name: "2a", description: "Your waves are fine and thin with a loose, tousled texture.")
 two_b = Hairtype.create(name: "2b", description: "Your hair is mostly straight at the roots and falls into more defined S-shaped waves from the mid-lengths to the ends. It is a medium texture with some frizz at the crown.")
@@ -51,3 +46,9 @@ three_c = Hairtype.create(name: "3c", description: "his often is referred to as 
 four_a = Hairtype.create(name: "4a", description: "Your dense, springy coils are either wiry or fine, and have the circumference of a crochet needle. They are tightly coiled, with a visible S pattern.")
 four_b = Hairtype.create(name: "4b", description: "Instead of curling or coiling, your hair bends in sharp angles like the letter Z. The curl is tighter and less defined - about the circumference of a pen - with strands that range from fine and thin to wiry and coarse.")
 four_c = Hairtype.create(name: "4c", description: "Your densely packed hair is similar to a 4b, but experiences less definition and more shrinkage. The tightly coiled strand texture ranges from super fine, thin and soft to wiry and coarse. It is very delicate.")
+
+aj = Customer.create(name: "AJ Baskett", location: "Queens, NY", hairtype: three_a, email: "aj12345@gmail.com", password: "foobar", password_confirmation: "foobar")
+ana = Customer.create(name: "Ana Arias", location: "Queens, NY", hairtype: three_b, email: "ananasdotjs@gmail.com", password: "ananasjs", password_confirmation: "ananasjs")
+bri = Customer.create(name: "Briana Arnold", location: "Bronx, NY", hairtype: four_c, email: "sweetiepienyc@gmail.com", password: "foobar", password_confirmation: "foobar")
+zakiya = Customer.create(name: "Zakiya Sims", location: "Brooklyn, NY", hairtype: four_c, email: "birthday777@gmail.com", password: "foobar", password_confirmation: "foobar")
+giselle = Customer.create(name: "Giselle Santiago", location: "Harlem, NY", hairtype: three_a, email: "curlygirl989@gmail.com", password: "foobar", password_confirmation: "foobar")

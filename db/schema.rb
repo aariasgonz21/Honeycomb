@@ -10,18 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_31_214213) do
+ActiveRecord::Schema.define(version: 2019_01_03_144619) do
 
   create_table "appointments", force: :cascade do |t|
     t.integer "customer_id"
-    t.integer "hair_stylist_id"
     t.integer "service_id"
-    t.text "date"
-    t.text "time"
+    t.datetime "datetime"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_appointments_on_customer_id"
-    t.index ["hair_stylist_id"], name: "index_appointments_on_hair_stylist_id"
     t.index ["service_id"], name: "index_appointments_on_service_id"
   end
 
@@ -29,8 +26,10 @@ ActiveRecord::Schema.define(version: 2018_12_31_214213) do
     t.text "name"
     t.text "location"
     t.integer "hairtype_id"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
     t.index ["hairtype_id"], name: "index_customers_on_hairtype_id"
   end
 
@@ -65,8 +64,10 @@ ActiveRecord::Schema.define(version: 2018_12_31_214213) do
   create_table "services", force: :cascade do |t|
     t.string "name"
     t.integer "price"
+    t.integer "hair_stylist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["hair_stylist_id"], name: "index_services_on_hair_stylist_id"
   end
 
 end

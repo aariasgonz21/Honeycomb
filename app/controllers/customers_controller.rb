@@ -12,9 +12,13 @@ class CustomersController < ApplicationController
   end
 
   def create
-     @customer = Customer.create(customer_params)
-    #@customer = Customer.create(params)
-    redirect_to customer_path(@customer)
+    @customer = Customer.create(customer_params)
+    byebug
+    if @customer.valid?
+      redirect_to customer_path(@customer)
+    else
+      render :new
+    end
   end
 
   def edit
@@ -37,7 +41,6 @@ class CustomersController < ApplicationController
   end
 
   def customer_params
-    params.require(:customer).permit(:name, :location, :hairtype_id)
+    params.require(:customer).permit(:name, :location, :hairtype_id, :email, :password, :password_confirmation)
   end
-
 end
