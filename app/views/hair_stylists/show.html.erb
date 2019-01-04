@@ -5,7 +5,17 @@
 
 <h5>Services Offered: </h5>
 <ul>
+  <% if logged_in? %>
+    <% @hair_stylist.services.each do |service| %>
+        <li>
+          <%= service.name %>  --  $<%= service.price %>.00  <%= link_to "Book An Appointment", "/appointments/#{service.id}/new"%>
+        </li>
+    <% end %>
+<% else %>
   <% @hair_stylist.services.each do |service| %>
       <li><%= service.name %>  --  $<%= service.price %>.00</li>
   <% end %>
+    <%= link_to "Login to make an appointment!", login_path %>
+<% end %>
+
 </ul>

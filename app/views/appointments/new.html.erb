@@ -1,4 +1,13 @@
-<h1>Make an Appointment</h1>
+<h1>Book an Appointment:</h1>
 
-<%= for %>
-<%= f.datetime_select :datetime, :ampm => true, :minute_step => 15 %>
+<h3>Name: <%= @customer.name %> </h3>
+<h3>Service: <%= @service.name %></h3>
+<h3>Price: $<%= @service.price %>.00</h3>
+<h3>Hair Stylist: <%= @hair_stylist.name %></h3>
+
+<%= form_for @appointment do |f| %>
+<%= f.hidden_field :service_id,  value: @service.id %>
+  <h3><%= f.label "date:" %></h3>
+  <%= f.collection_select :datetime, @datetimes, :itself, :to_date %><br>
+  <%= f.submit %>
+<% end %>

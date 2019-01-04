@@ -5,11 +5,13 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
 
+  get '/appointments/:service_id/new', to: 'appointments#new'
+
   resources :hairtypes, only: :index
   resources :customers
   resources :salons, only: [:index, :show, :new, :create]
   resources :hair_stylists, only: :show
-  resources :appointments, only: [:new, :create, :destroy]
+  resources :appointments, only: [:create, :destroy]
   resources :services, only: :show
 
   root to: 'pages#home'

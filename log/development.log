@@ -16311,3 +16311,3134 @@ Processing by HairStylistsController#show as HTML
 Completed 200 OK in 90ms (Views: 78.4ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:22:29 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 287ms (Views: 280.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/customers/new" for 127.0.0.1 at 2019-01-03 19:22:32 -0500
+Processing by CustomersController#new as HTML
+  Rendering customers/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  [1m[36mHairtype Load (0.4ms)[0m  [1m[34mSELECT "hairtypes".* FROM "hairtypes"[0m
+  ↳ app/views/customers/new.html.erb:21
+  Rendered customers/new.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 87ms (Views: 58.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-01-03 19:23:23 -0500
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Bc+iLCOnfBehZqMocJTUDF+k2P5aNK8fobbNmyIyJ/BXW/QPcHzsuWQi7f/xIEMYbjymXMCU7iVHMLj5Lilfdw==", "customer"=>{"name"=>"Jojo", "location"=>"Brooklyn, NY", "email"=>"jojo@jba.jp", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "hairtype_id"=>"3"}, "commit"=>"Create Customer"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/customers_controller.rb:15
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:15
+  [1m[36mCustomer Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "jojo@jba.jp"], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/customers_controller.rb:15
+  [1m[36mCustomer Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "jojo@jba.jp"], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT "hairtypes".* FROM "hairtypes"[0m
+  ↳ app/views/customers/new.html.erb:21
+  Rendered customers/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 6410ms (Views: 62.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-01-03 19:23:43 -0500
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kdgmJPdrUPQb4PRGtydLpKII04SEbNErkyrId4WelSP8q3c1IWxvhnolgwezMFaX/L74RAWpfel2lBIgTYOPmw==", "customer"=>{"name"=>"Jojo", "location"=>"Brooklyn, NY", "email"=>"jojo@jba.jp", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "hairtype_id"=>"3"}, "commit"=>"Create Customer"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/customers_controller.rb:15
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:15
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "jojo@jba.jp"], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:15
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/customers_controller.rb:15
+  [1m[36mCustomer Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "jojo@jba.jp"], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+  Rendering customers/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.7ms)
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT "hairtypes".* FROM "hairtypes"[0m
+  ↳ app/views/customers/new.html.erb:21
+  Rendered customers/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 4200ms (Views: 60.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/customers" for 127.0.0.1 at 2019-01-03 19:24:08 -0500
+Processing by CustomersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hSg6TS/GZksTHxuUZ3cq0QbQUPAtc8UBs+smWulSGIXoW2tc+cFZOXLabNVjYDfiWGZ7MKy2acNWVfwNIU8CPQ==", "customer"=>{"name"=>"Jojo", "location"=>"Brooklyn, NY", "email"=>"jojo@jba.jp", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "hairtype_id"=>"3"}, "commit"=>"Create Customer"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/customers_controller.rb:15
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:15
+  [1m[36mCustomer Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) LIMIT ?[0m  [["email", "jojo@jba.jp"], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:15
+  [1m[36mCustomer Create (0.5ms)[0m  [1m[32mINSERT INTO "customers" ("name", "location", "hairtype_id", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Jojo"], ["location", "Brooklyn, NY"], ["hairtype_id", 3], ["email", "jojo@jba.jp"], ["created_at", "2019-01-04 00:24:08.341859"], ["updated_at", "2019-01-04 00:24:08.341859"], ["password_digest", "$2a$10$X9XJDHevdzSbXWaTfXJnUef1UBlLugziphR5cAfwzKYCJ9fHosJn6"]]
+  ↳ app/controllers/customers_controller.rb:15
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/customers_controller.rb:15
+  [1m[36mCustomer Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "customers" WHERE LOWER("customers"."email") = LOWER(?) AND "customers"."id" != ? LIMIT ?[0m  [["email", "jojo@jba.jp"], ["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:17
+Redirected to http://localhost:3000/customers/6
+Completed 302 Found in 3287ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 19:24:11 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.1ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 58ms (Views: 51.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/customers/6/edit" for 127.0.0.1 at 2019-01-03 19:24:20 -0500
+Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  Rendering customers/edit.html.erb within layouts/application
+  [1m[36mHairtype Load (0.4ms)[0m  [1m[34mSELECT "hairtypes".* FROM "hairtypes"[0m
+  ↳ app/views/customers/edit.html.erb:19
+  Rendered customers/edit.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 73ms (Views: 61.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:24:26 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 57ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hairtypes" for 127.0.0.1 at 2019-01-03 19:24:29 -0500
+Processing by HairtypesController#index as HTML
+  Rendering hairtypes/index.html.erb within layouts/application
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT "hairtypes".* FROM "hairtypes"[0m
+  ↳ app/views/hairtypes/index.html.erb:3
+  Rendered hairtypes/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 50ms (Views: 43.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 19:24:41 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 62ms (Views: 49.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2019-01-03 19:24:43 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 1]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 71ms (Views: 60.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 19:24:44 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (1.6ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:8
+  Rendered hair_stylists/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 70ms (Views: 57.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-03 19:25:19 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 56ms (Views: 50.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-01-03 19:25:31 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Dc4J5r8YOVINv/KTnCKGuF3LcnUy3iylWEY4AT8eJm8lEbmz6AAw+2f1U1HR4WRrjbN88vcU+igG6/HEuvHdQ==", "session"=>{"email"=>"jojo@jba.jp", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "jojo@jba.jp"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+Redirected to http://localhost:3000/customers/6
+Completed 302 Found in 77ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 19:25:31 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.1ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 55ms (Views: 48.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 19:25:40 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 59ms (Views: 47.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/salons/2" for 127.0.0.1 at 2019-01-03 19:25:42 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 2]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 58ms (Views: 44.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/hair_stylists/8" for 127.0.0.1 at 2019-01-03 19:25:44 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mHairStylist Load (0.5ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 8]]
+  ↳ app/views/hair_stylists/show.html.erb:8
+  Rendered hair_stylists/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 72ms (Views: 61.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-03 19:25:48 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 113ms (Views: 103.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:25:51 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 91ms (Views: 80.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:34:13 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 143ms (Views: 131.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 19:34:17 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 59ms (Views: 52.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2019-01-03 19:34:18 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 1]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 77ms (Views: 67.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 19:34:20 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mService Load (0.7ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:15
+  Rendered hair_stylists/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 59ms (Views: 50.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 19:34:23 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.4ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:15
+  Rendered hair_stylists/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 69ms (Views: 55.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 19:34:25 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.5ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:15
+  Rendered hair_stylists/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 71ms (Views: 58.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 19:34:37 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:15
+  Rendered hair_stylists/show.html.erb within layouts/application (284.9ms)
+Completed 500 Internal Server Error in 307ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `login' for #<#<Class:0x007fb4d7373640>:0x007fb4d6601e58>
+Did you mean?  log_in):
+    15:   <% @hair_stylist.services.each do |service| %>
+    16:       <li><%= service.name %>  --  $<%= service.price %>.00</li>
+    17:   <% end %>
+    18:     <%= link_to "Login to make an appointment!", login %>
+    19: <% end %>
+    20: 
+    21: </ul>
+  
+app/views/hair_stylists/show.html.erb:18:in `_app_views_hair_stylists_show_html_erb___3850119484577156436_70207333733500'
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 19:34:44 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:15
+  Rendered hair_stylists/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 83ms (Views: 75.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-03 19:34:45 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 67ms (Views: 58.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-01-03 19:34:53 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"W0WcDR4cfrBVNqV6eMym9QcqLXpCG+DjzGeMT+J2mho75uLMS0AelvCfj/1x+6l+SGvNQF0My7n5HTto9GEl9g==", "session"=>{"email"=>"jojo@jba.jp", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "jojo@jba.jp"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+Redirected to http://localhost:3000/customers/6
+Completed 302 Found in 78ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 19:34:53 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 59ms (Views: 53.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:34:59 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 72ms (Views: 63.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 19:35:00 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 59ms (Views: 46.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2019-01-03 19:35:02 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 1]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 63ms (Views: 51.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 19:35:03 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:15
+  Rendered hair_stylists/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 66ms (Views: 53.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-03 19:35:05 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 62ms (Views: 50.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-03 19:35:57 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 63ms (Views: 57.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 19:38:18 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (1.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (56.9ms)
+Completed 200 OK in 166ms (Views: 142.6ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2019-01-03 19:38:21 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 1]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 87ms (Views: 57.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 19:38:23 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 61ms (Views: 52.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:38:23 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 66ms (Views: 57.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:39:41 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 67ms (Views: 58.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-03 19:39:43 -0500
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 66ms (Views: 61.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-01-03 19:39:49 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"prjSJBdu1KZWlJr6+Dm5n7IONa5luFyKk9MkuuE3w87GG6zlQjK0gPM9sH3xDrYU/U/VlHqvd9CmqZOd9yB8Ig==", "session"=>{"email"=>"jojo@jba.jp", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."email" = ? LIMIT ?[0m  [["email", "jojo@jba.jp"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6
+Redirected to http://localhost:3000/customers/6
+Completed 302 Found in 77ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 19:39:49 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 59ms (Views: 43.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 19:39:52 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 63ms (Views: 55.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2019-01-03 19:39:53 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 1]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 63ms (Views: 52.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/hair_stylists/2" for 127.0.0.1 at 2019-01-03 19:39:55 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHairStylist Load (0.4ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 2]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 64ms (Views: 52.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2019-01-03 19:40:00 -0500
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 1.5ms)
+
+
+  
+SyntaxError (/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:3: syntax error, unexpected ')'
+'.freeze;@output_buffer.append=( for );@output_buffer.safe_append='
+                                      ^
+/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:9: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/appointments/new.html.erb:3: syntax error, unexpected ')'
+app/views/appointments/new.html.erb:7: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/appointments/new.html.erb:9: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/hair_stylists/2" for 127.0.0.1 at 2019-01-03 19:40:04 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 2]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 69ms (Views: 56.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2019-01-03 19:40:10 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 1]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 65ms (Views: 55.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 19:40:10 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 56ms (Views: 49.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 19:40:11 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 58ms (Views: 53.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 19:40:13 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 66ms (Views: 54.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:40:18 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 115ms (Views: 102.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 19:40:20 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 59ms (Views: 50.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:42:56 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 75ms (Views: 65.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:43:51 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 65ms (Views: 55.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:43:58 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 61ms (Views: 53.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:44:11 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 60ms (Views: 51.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:44:17 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 67ms (Views: 57.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:44:41 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 58ms (Views: 49.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/hairtypes" for 127.0.0.1 at 2019-01-03 19:44:43 -0500
+Processing by HairtypesController#index as HTML
+  Rendering hairtypes/index.html.erb within layouts/application
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT "hairtypes".* FROM "hairtypes"[0m
+  ↳ app/views/hairtypes/index.html.erb:3
+  Rendered hairtypes/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 58ms (Views: 53.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 19:44:46 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 61ms (Views: 47.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2019-01-03 19:44:47 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 1]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 58ms (Views: 50.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 19:44:48 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 61ms (Views: 53.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:45:46 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (8.5ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"customers", :id=>nil}, missing required keys: [:id]):
+    3: <%= link_to "Salons", salons_path %><br>
+    4: <%= link_to "Hairtypes", hairtypes_path %><br>
+    5: <% if logged_in? %>
+    6:   <%= link_to "Your Profile", customer_path(@customer) %>
+    7:   <%= link_to "Log Out" %><br>
+    8: <% else %>
+    9:   <%= link_to "Login", login_path %><br>
+  
+app/views/pages/home.html.erb:6:in `_app_views_pages_home_html_erb___708414997336440695_70207311309180'
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:46:00 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (11.0ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"customers"}, missing required keys: [:id]):
+    3: <%= link_to "Salons", salons_path %><br>
+    4: <%= link_to "Hairtypes", hairtypes_path %><br>
+    5: <% if logged_in? %>
+    6:   <%= link_to "Your Profile", customer_path %>
+    7:   <%= link_to "Log Out" %><br>
+    8: <% else %>
+    9:   <%= link_to "Login", login_path %><br>
+  
+app/views/pages/home.html.erb:6:in `_app_views_pages_home_html_erb___708414997336440695_70207339236460'
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:46:21 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"customers", :id=>nil}, missing required keys: [:id]):
+    3: <%= link_to "Salons", salons_path %><br>
+    4: <%= link_to "Hairtypes", hairtypes_path %><br>
+    5: <% if logged_in? %>
+    6:   <%= link_to "Your Profile", customer_path(session[:id]) %>
+    7:   <%= link_to "Log Out" %><br>
+    8: <% else %>
+    9:   <%= link_to "Login", login_path %><br>
+  
+app/views/pages/home.html.erb:6:in `_app_views_pages_home_html_erb___708414997336440695_70207334610200'
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:46:46 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 80ms (Views: 70.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:46:55 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 70ms (Views: 61.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 19:46:58 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 73ms (Views: 61.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 19:47:01 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 61ms (Views: 52.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 19:47:27 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 69ms (Views: 55.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 19:47:28 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 62ms (Views: 50.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/salons/2" for 127.0.0.1 at 2019-01-03 19:47:29 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSalon Load (0.5ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 2]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 57ms (Views: 50.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/hair_stylists/8" for 127.0.0.1 at 2019-01-03 19:47:31 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mHairStylist Load (0.4ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 8]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 74ms (Views: 61.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/hair_stylists/7" for 127.0.0.1 at 2019-01-03 19:47:33 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mHairStylist Load (0.4ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 7]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 61ms (Views: 48.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/hair_stylists/9" for 127.0.0.1 at 2019-01-03 19:47:37 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mHairStylist Load (0.4ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 9]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 75ms (Views: 59.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/salons/2" for 127.0.0.1 at 2019-01-03 19:47:39 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 2]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 76ms (Views: 62.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/hair_stylists/7" for 127.0.0.1 at 2019-01-03 19:47:40 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mHairStylist Load (0.4ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 7]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 67ms (Views: 53.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/salons/3" for 127.0.0.1 at 2019-01-03 19:47:44 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 3]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 73ms (Views: 62.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/hair_stylists/5" for 127.0.0.1 at 2019-01-03 19:47:47 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 5]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 59ms (Views: 46.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/hair_stylists/5" for 127.0.0.1 at 2019-01-03 19:50:54 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 5]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 61ms (Views: 52.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2019-01-03 19:50:56 -0500
+Processing by AppointmentsController#new as HTML
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Book an Appointment:</h1>
+    2: 
+    3: <h3>Name: <%= @customer.name %></h3>
+  
+app/views/appointments/new.html.erb:3:in `_app_views_appointments_new_html_erb__1556279729783964851_70207356718640'
+Started GET "/appointments/new" for 127.0.0.1 at 2019-01-03 19:59:56 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 124ms (Views: 82.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2019-01-03 20:01:24 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 3.8ms)
+
+
+  
+NoMethodError (undefined method `find_by' for nil:NilClass):
+  
+app/controllers/appointments_controller.rb:7:in `new'
+Started GET "/appointments/new" for 127.0.0.1 at 2019-01-03 20:01:49 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `find_by' for nil:NilClass):
+  
+app/controllers/appointments_controller.rb:7:in `new'
+Started GET "/appointments/new" for 127.0.0.1 at 2019-01-03 20:04:36 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (8.5ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Book an Appointment with <%= @hair_stylist.name %>:</h1>
+    2: 
+    3: <h3>Name: <%= @customer.name %> </h3>
+  
+app/views/appointments/new.html.erb:1:in `_app_views_appointments_new_html_erb__1556279729783964851_70207339089680'
+Started GET "/appointments/new" for 127.0.0.1 at 2019-01-03 20:04:51 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 58ms (Views: 50.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/hair_stylists/5" for 127.0.0.1 at 2019-01-03 20:04:52 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 5]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 129ms (Views: 95.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/salons/3" for 127.0.0.1 at 2019-01-03 20:04:53 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 3]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 75ms (Views: 48.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 20:04:53 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 67ms (Views: 59.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 20:04:54 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (2.0ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 179ms (Views: 132.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 20:04:54 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 141ms (Views: 129.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 20:05:03 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 176ms (Views: 158.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 20:05:16 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 57ms (Views: 47.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 20:05:18 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 56ms (Views: 47.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2019-01-03 20:05:20 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 1]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 76ms (Views: 65.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 20:05:23 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.5ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 59ms (Views: 48.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2019-01-03 20:05:25 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 56ms (Views: 46.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 20:05:35 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 64ms (Views: 52.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2019-01-03 20:05:39 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 78ms (Views: 63.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 20:05:57 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (2.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 68ms (Views: 54.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2019-01-03 20:06:00 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 68ms (Views: 52.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2019-01-03 20:08:46 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (11.2ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Book an Appointment:</h1>
+    2: 
+    3: <h3>Name: <%= @customer.name %> </h3>
+    4: <%= @appointment.service.name %>
+  
+app/views/appointments/new.html.erb:4:in `_app_views_appointments_new_html_erb__1556279729783964851_70207344548660'
+Started PUT "/__web_console/repl_sessions/6f3c2b17db62fc20382688f890a5b376" for 127.0.0.1 at 2019-01-03 20:08:52 -0500
+Started PUT "/__web_console/repl_sessions/6f3c2b17db62fc20382688f890a5b376" for 127.0.0.1 at 2019-01-03 20:08:53 -0500
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 20:10:01 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.6ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 65ms (Views: 56.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2019-01-03 20:10:08 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 1]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 111ms (Views: 98.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 20:10:09 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 89ms (Views: 76.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2019-01-03 20:10:29 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 1]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 66ms (Views: 52.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 20:10:52 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 64ms (Views: 50.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 20:10:58 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 68ms (Views: 57.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2019-01-03 20:11:00 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 1]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 64ms (Views: 52.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 20:11:03 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 69ms (Views: 53.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2019-01-03 20:11:09 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 68ms (Views: 53.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 20:11:18 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 72ms (Views: 62.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 20:11:23 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 70ms (Views: 56.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 20:11:26 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 106ms (Views: 87.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 20:11:32 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 68ms (Views: 55.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2019-01-03 20:11:33 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 1]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 69ms (Views: 51.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/hair_stylists/2" for 127.0.0.1 at 2019-01-03 20:11:34 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHairStylist Load (0.5ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 2]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 68ms (Views: 60.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 20:11:39 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.9ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.9ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 65ms (Views: 47.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 20:11:41 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 81ms (Views: 68.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2019-01-03 20:11:43 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.5ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 1]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 66ms (Views: 49.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/hair_stylists/2" for 127.0.0.1 at 2019-01-03 20:11:44 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mHairStylist Load (2.8ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 2]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 69ms (Views: 53.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 20:12:30 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 64ms (Views: 51.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2019-01-03 20:13:37 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.5ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 1]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 90ms (Views: 76.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 20:13:39 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 73ms (Views: 62.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2019-01-03 20:14:14 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 67ms (Views: 55.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 20:15:17 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 74ms (Views: 52.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 20:15:18 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 72ms (Views: 62.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 20:15:49 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 64ms (Views: 53.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2019-01-03 20:15:50 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 1]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 70ms (Views: 57.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 20:15:52 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.4ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 67ms (Views: 52.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2019-01-03 20:15:53 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 60ms (Views: 47.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 20:17:47 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 72ms (Views: 62.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/salons/2" for 127.0.0.1 at 2019-01-03 20:17:55 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSalon Load (0.5ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 2]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 58ms (Views: 50.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/hair_stylists/8" for 127.0.0.1 at 2019-01-03 20:17:56 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mHairStylist Load (0.7ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 8]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 76ms (Views: 60.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2019-01-03 20:17:59 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 1]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 50ms (Views: 42.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 20:18:00 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 67ms (Views: 52.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/appointments/new" for 127.0.0.1 at 2019-01-03 20:18:04 -0500
+Processing by AppointmentsController#new as HTML
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 88ms (Views: 71.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 20:19:05 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 68ms (Views: 57.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 20:33:53 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 92ms (Views: 72.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/hair_stylists/appointments/4/new" for 127.0.0.1 at 2019-01-03 20:34:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/hair_stylists/appointments/4/new"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/hair_stylists/appointments/4/new" for 127.0.0.1 at 2019-01-03 20:34:33 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/hair_stylists/appointments/4/new"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 20:34:38 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 69ms (Views: 61.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 20:34:41 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 57ms (Views: 42.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 20:35:05 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (12.8ms)
+Completed 500 Internal Server Error in 237124ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <h1>Book an Appointment:</h1>
+    2: 
+    3: <h3>Name: <%= @customer.name %> </h3>
+    4: <h3>Service: <%= @service.name %></h3>
+    5: <h3>Price: $<%= @service.price %>.00</h3>
+  
+app/views/appointments/new.html.erb:4:in `_app_views_appointments_new_html_erb__1556279729783964851_70207315297740'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 20:39:51 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 7282ms (Views: 144.3ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 20:45:22 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:8
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (14.0ms)
+Completed 500 Internal Server Error in 3298ms (ActiveRecord: 5.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    3: <h3>Name: <%= @customer.name %> </h3>
+    4: <h3>Service: <%= @service.name %></h3>
+    5: <h3>Price: $<%= @service.price %>.00</h3>
+    6: <h3>Hair Stylist: <%= @hair_stylist.name %></h3>
+  
+app/views/appointments/new.html.erb:6:in `_app_views_appointments_new_html_erb__1556279729783964851_70207290492200'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 20:45:56 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  [1m[36mHairStylist Load (0.4ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:8
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 3312ms (Views: 90.9ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 20:51:38 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.8ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  [1m[36mHairStylist Load (0.4ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:8
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (41.8ms)
+Completed 500 Internal Server Error in 3665ms (ActiveRecord: 4.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `time' for #<Appointment:0x007fb4cf722708>):
+     7: 
+     8: <%= form_for @appointment do |f| %>
+     9:   <%= f.label :datetime %>
+    10:   <%= f.select :time, options_for_select(9..9) %>
+    11: <% end %>
+  
+app/views/appointments/new.html.erb:10:in `block in _app_views_appointments_new_html_erb__1556279729783964851_70207275569280'
+app/views/appointments/new.html.erb:8:in `_app_views_appointments_new_html_erb__1556279729783964851_70207275569280'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 20:51:53 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  [1m[36mHairStylist Load (0.4ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:8
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 2681ms (Views: 88.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 20:55:43 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  [1m[36mHairStylist Load (0.5ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:8
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (16.5ms)
+Completed 500 Internal Server Error in 9587ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 4..6)):
+     7: 
+     8: <%= form_for @appointment do |f| %>
+     9:   <%= f.label "date" %>
+    10:   <%= f.collection_select :datetime, options_for_select('9') %>
+    11: <% end %>
+  
+app/views/appointments/new.html.erb:10:in `block in _app_views_appointments_new_html_erb__1556279729783964851_70207356947360'
+app/views/appointments/new.html.erb:8:in `_app_views_appointments_new_html_erb__1556279729783964851_70207356947360'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:01:00 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+Completed 500 Internal Server Error in 294ms (ActiveRecord: 4.9ms)
+
+
+  
+NameError (undefined local variable or method `hour' for #<AppointmentsController:0x007fb4d7d89620>
+Did you mean?  hours):
+  
+app/controllers/appointments_controller.rb:12:in `block in new'
+app/controllers/appointments_controller.rb:11:in `times'
+app/controllers/appointments_controller.rb:11:in `new'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:01:23 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+Completed 500 Internal Server Error in 311ms (ActiveRecord: 4.6ms)
+
+
+  
+NameError (undefined local variable or method `hour' for #<AppointmentsController:0x007fb4cf5790c8>
+Did you mean?  hours):
+  
+app/controllers/appointments_controller.rb:12:in `block in new'
+app/controllers/appointments_controller.rb:11:in `times'
+app/controllers/appointments_controller.rb:11:in `new'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:01:34 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 4.5ms)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/controllers/appointments_controller.rb:13:in `block in new'
+app/controllers/appointments_controller.rb:11:in `times'
+app/controllers/appointments_controller.rb:11:in `new'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:02:07 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+Completed 500 Internal Server Error in 51212ms (ActiveRecord: 5.9ms)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/controllers/appointments_controller.rb:14:in `block in new'
+app/controllers/appointments_controller.rb:12:in `times'
+app/controllers/appointments_controller.rb:12:in `new'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:03:15 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+Completed 500 Internal Server Error in 102444ms (ActiveRecord: 0.6ms)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/controllers/appointments_controller.rb:14:in `block in new'
+app/controllers/appointments_controller.rb:12:in `times'
+app/controllers/appointments_controller.rb:12:in `new'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:05:02 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+Completed 500 Internal Server Error in 1916ms (ActiveRecord: 5.2ms)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/controllers/appointments_controller.rb:14:in `block in new'
+app/controllers/appointments_controller.rb:12:in `times'
+app/controllers/appointments_controller.rb:12:in `new'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:05:41 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (8.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.4ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 14.7ms)
+
+
+  
+NoMethodError (undefined method `+' for nil:NilClass):
+  
+app/controllers/appointments_controller.rb:13:in `block in new'
+app/controllers/appointments_controller.rb:11:in `times'
+app/controllers/appointments_controller.rb:11:in `new'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:06:05 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (29.5ms)
+Completed 500 Internal Server Error in 184ms (ActiveRecord: 5.5ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 2, expected 4..6)):
+     7: 
+     8: <%= form_for @appointment do |f| %>
+     9:   <%= f.label "date" %>
+    10:   <%= f.collection_select :datetime, options_for_select('9') %>
+    11: <% end %>
+  
+app/views/appointments/new.html.erb:10:in `block in _app_views_appointments_new_html_erb__2070343318160458660_70215822419340'
+app/views/appointments/new.html.erb:8:in `_app_views_appointments_new_html_erb__2070343318160458660_70215822419340'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:07:27 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (16.3ms)
+Completed 500 Internal Server Error in 191ms (ActiveRecord: 9.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `self' for 2019-01-03 21:07:27 -0500:Time
+Did you mean?  itself):
+     7: 
+     8: <%= form_for @appointment do |f| %>
+     9:   <%= f.label "date" %>
+    10:   <%= f.collection_select :datetime, @datetimes, :self, :to_s %>
+    11: <% end %>
+  
+app/views/appointments/new.html.erb:10:in `block in _app_views_appointments_new_html_erb__2070343318160458660_70215803841700'
+app/views/appointments/new.html.erb:8:in `_app_views_appointments_new_html_erb__2070343318160458660_70215803841700'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:07:33 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 499ms (Views: 481.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:07:57 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 112ms (Views: 102.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:08:03 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1)):
+     7: 
+     8: <%= form_for @appointment do |f| %>
+     9:   <%= f.label "date" %>
+    10:   <%= f.collection_select :datetime, @datetimes, :itself, :strftime %>
+    11: <% end %>
+  
+app/views/appointments/new.html.erb:10:in `block in _app_views_appointments_new_html_erb__2070343318160458660_70215808216060'
+app/views/appointments/new.html.erb:8:in `_app_views_appointments_new_html_erb__2070343318160458660_70215808216060'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:09:13 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.8ms)
+
+
+  
+SyntaxError (/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:10: syntax error, unexpected '(', expecting ')'
+...@datetimes, :itself, :strptime(dt, '%m/%d/%Y %H:%M') );@outp...
+...                               ^
+/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:10: syntax error, unexpected ')', expecting &. or :: or '[' or '.'
+...:strptime(dt, '%m/%d/%Y %H:%M') );@output_buffer.safe_append...
+...                               ^
+/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:13: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:15: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/appointments/new.html.erb:10: syntax error, unexpected '(', expecting ')'
+app/views/appointments/new.html.erb:10: syntax error, unexpected ')', expecting &. or :: or '[' or '.'
+app/views/appointments/new.html.erb:11: syntax error, unexpected keyword_end, expecting ')'
+app/views/appointments/new.html.erb:13: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/appointments/new.html.erb:15: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:09:32 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:10: syntax error, unexpected '(', expecting ')'
+...@datetimes, :itself, :strptime('%m/%d/%Y %H:%M') );@output_b...
+...                               ^
+/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:10: syntax error, unexpected ')', expecting keyword_end
+..., :strptime('%m/%d/%Y %H:%M') );@output_buffer.safe_append='
+...                               ^):
+  
+app/views/appointments/new.html.erb:10: syntax error, unexpected '(', expecting ')'
+app/views/appointments/new.html.erb:10: syntax error, unexpected ')', expecting keyword_end
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:09:57 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.7ms)
+
+
+  
+SyntaxError (/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:10: syntax error, unexpected '(', expecting ')'
+...@datetimes, :itself, :strftime("%A, %d/%m/%Y") );@output_buf...
+...                               ^
+/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:10: syntax error, unexpected ')', expecting keyword_end
+...lf, :strftime("%A, %d/%m/%Y") );@output_buffer.safe_append='
+...                               ^):
+  
+app/views/appointments/new.html.erb:10: syntax error, unexpected '(', expecting ')'
+app/views/appointments/new.html.erb:10: syntax error, unexpected ')', expecting keyword_end
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:09:59 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.0ms)
+
+
+  
+SyntaxError (/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:10: syntax error, unexpected '(', expecting ')'
+...@datetimes, :itself, :strftime("%A, %d/%m/%Y") );@output_buf...
+...                               ^
+/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:10: syntax error, unexpected ')', expecting keyword_end
+...lf, :strftime("%A, %d/%m/%Y") );@output_buffer.safe_append='
+...                               ^):
+  
+app/views/appointments/new.html.erb:10: syntax error, unexpected '(', expecting ')'
+app/views/appointments/new.html.erb:10: syntax error, unexpected ')', expecting keyword_end
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:10:11 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 60ms (Views: 47.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:10:33 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.6ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 128ms (Views: 112.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:11:32 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.4ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 75ms (Views: 61.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:11:46 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.5ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 74ms (Views: 60.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:14:09 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 162ms (Views: 97.6ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:16:32 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `hour' for :to_time:Symbol):
+     9:   <h3><%= f.label "date:" %></h3>
+    10:   <%= f.collection_select :datetime, @datetimes, :itself, :to_date %>
+    11:   <h3><%= f.label "time:" %></h3>
+    12:   <%= f.collection_select :datetime, @datetimes, :itself, :to_time.hour%>
+    13: <% end %>
+  
+app/views/appointments/new.html.erb:12:in `block in _app_views_appointments_new_html_erb__2070343318160458660_70215806372860'
+app/views/appointments/new.html.erb:8:in `_app_views_appointments_new_html_erb__2070343318160458660_70215806372860'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:16:45 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.5ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (280.7ms)
+Completed 500 Internal Server Error in 305ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `time' for #<#<Class:0x007fb8ca14a9f8>:0x007fb8c8acd770>
+Did you mean?  timeout):
+     9:   <h3><%= f.label "date:" %></h3>
+    10:   <%= f.collection_select :datetime, @datetimes, :itself, :to_date %>
+    11:   <h3><%= f.label "time:" %></h3>
+    12:   <%= f.collection_select :datetime, @datetimes, :itself, time.hour%>
+    13: <% end %>
+  
+app/views/appointments/new.html.erb:12:in `block in _app_views_appointments_new_html_erb__2070343318160458660_70215843663560'
+app/views/appointments/new.html.erb:8:in `_app_views_appointments_new_html_erb__2070343318160458660_70215843663560'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:35:24 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 2.1ms)
+
+
+  
+SyntaxError (/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:12: syntax error, unexpected ')'
+...atetime, @datetimes, :itself, );@output_buffer.safe_append='
+...                               ^
+/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:14: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; end 
+             ^
+/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:16: syntax error, unexpected keyword_ensure, expecting ')'
+/Users/flatironschool/Desktop/Access Labs/Mod 2/Rails/Honeycomb/app/views/appointments/new.html.erb:18: syntax error, unexpected keyword_end, expecting ')'):
+  
+app/views/appointments/new.html.erb:12: syntax error, unexpected ')'
+app/views/appointments/new.html.erb:14: syntax error, unexpected keyword_end, expecting ')'
+app/views/appointments/new.html.erb:16: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/appointments/new.html.erb:18: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:35:37 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.7ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 82ms (Views: 69.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/appointments/1/new" for 127.0.0.1 at 2019-01-03 21:35:48 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"1"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 68ms (Views: 56.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/appointments" for 127.0.0.1 at 2019-01-03 21:40:15 -0500
+Processing by AppointmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EnHAnKms3/yL8wcFzc7D2gxUikZccVZkJyCjeMqeFS5/ApGNf6vgjuo2cETJ2d7pUuKhht20+qbCnnkvAoMPlg==", "appointment"=>{"datetime"=>"2019-01-06 21:35:48 -0500"}, "commit"=>"Create Appointment"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:23
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"customers"}, missing required keys: [:id]):
+  
+app/controllers/appointments_controller.rb:24:in `create'
+Started POST "/appointments" for 127.0.0.1 at 2019-01-03 21:40:29 -0500
+Processing by AppointmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EnHAnKms3/yL8wcFzc7D2gxUikZccVZkJyCjeMqeFS5/ApGNf6vgjuo2cETJ2d7pUuKhht20+qbCnnkvAoMPlg==", "appointment"=>{"datetime"=>"2019-01-06 21:35:48 -0500"}, "commit"=>"Create Appointment"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:23
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:23
+Redirected to http://localhost:3000/customers/6
+Completed 302 Found in 24ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 21:40:29 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  Rendered customers/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 125ms (Views: 81.4ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 21:46:55 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.6ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  Rendered customers/show.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 89ms (Views: 76.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 21:47:15 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  Rendered customers/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 64ms (Views: 51.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 21:47:17 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  Rendered customers/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 69ms (Views: 60.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 21:48:01 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  Rendered customers/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 73ms (Views: 63.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 21:48:03 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.3ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 66ms (Views: 52.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/salons/1" for 127.0.0.1 at 2019-01-03 21:48:04 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 1]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 81ms (Views: 63.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/hair_stylists/1" for 127.0.0.1 at 2019-01-03 21:48:06 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mHairStylist Load (0.4ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 1]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 76ms (Views: 58.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 21:48:36 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.4ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  Rendered customers/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 60ms (Views: 50.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 21:49:55 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.1ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  Rendered customers/show.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 141ms (Views: 92.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 21:49:57 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  Rendered customers/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 75ms (Views: 64.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/customers/5" for 127.0.0.1 at 2019-01-03 21:50:07 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  Rendered customers/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 83ms (Views: 71.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 21:50:12 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  Rendered customers/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 74ms (Views: 64.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/customers/3" for 127.0.0.1 at 2019-01-03 21:50:15 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  Rendered customers/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 68ms (Views: 57.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/customers/3" for 127.0.0.1 at 2019-01-03 21:51:25 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.1ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 3]]
+  ↳ app/views/customers/show.html.erb:10
+  Rendered customers/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 123ms (Views: 89.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 21:51:30 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  Rendered customers/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 91ms (Views: 82.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 21:51:43 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.4ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 68ms (Views: 52.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/salons/3" for 127.0.0.1 at 2019-01-03 21:51:44 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSalon Load (0.5ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 3]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 68ms (Views: 46.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/hair_stylists/5" for 127.0.0.1 at 2019-01-03 21:51:45 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mHairStylist Load (0.4ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 5]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 60ms (Views: 50.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/appointments/9/new" for 127.0.0.1 at 2019-01-03 21:51:46 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"9"}
+  [1m[36mCustomer Load (0.6ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 99ms (Views: 77.6ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/appointments" for 127.0.0.1 at 2019-01-03 21:51:47 -0500
+Processing by AppointmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yStXr93ghL9zNxn40ZgW9YK+BrLgebgwq1OxPw2g9JiV1rHPo8knIU/qeSh5bpeQMchV7D+mRVQEUR8VSDGmsQ==", "appointment"=>{"datetime"=>"2019-01-03 21:51:46 -0500"}, "commit"=>"Create Appointment"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:25
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:25
+Redirected to http://localhost:3000/customers/6
+Completed 302 Found in 14ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 21:51:47 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.1ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.1ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.1ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  Rendered customers/show.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 47ms (Views: 40.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/appointments/9/new" for 127.0.0.1 at 2019-01-03 21:52:14 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"9"}
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 192ms (Views: 98.4ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/appointments" for 127.0.0.1 at 2019-01-03 21:52:15 -0500
+Processing by AppointmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OkhUYOJ3GfitNSJbgGeMFgtFgrvpP0Dbq1CrcktpfFJXOwVxNHAmiszwVRqEcJElVfOpe2j67BlO7nElg3Rm6g==", "appointment"=>{"datetime"=>"2019-01-03 21:52:14 -0500"}, "commit"=>"Create Appointment"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:25
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:25
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/appointments_controller.rb:25
+Completed 500 Internal Server Error in 85171ms (ActiveRecord: 0.6ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/appointments_controller.rb:27:in `create'
+Started GET "/appointments/9/new" for 127.0.0.1 at 2019-01-03 21:53:55 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/flatironschool/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"9"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.2ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 493ms (Views: 390.8ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/appointments" for 127.0.0.1 at 2019-01-03 21:53:58 -0500
+Processing by AppointmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AwUQCvAfszzNL0kMYiraurQ31NHwOyMMi7KPMd3wZ6pudkEbJhiMTqzqPk1mPceJ6oH/EXH+j85uDFVmFe19Eg==", "appointment"=>{"service_id"=>"9", "datetime"=>"2019-01-03 21:53:55 -0500"}, "commit"=>"Create Appointment"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:25
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:25
+  [1m[36mService Load (0.1ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:25
+  [1m[36mAppointment Create (0.7ms)[0m  [1m[32mINSERT INTO "appointments" ("customer_id", "service_id", "datetime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["customer_id", 6], ["service_id", 9], ["datetime", "2019-01-04 02:53:55"], ["created_at", "2019-01-04 02:53:58.614668"], ["updated_at", "2019-01-04 02:53:58.614668"]]
+  ↳ app/controllers/appointments_controller.rb:25
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/appointments_controller.rb:25
+Redirected to http://localhost:3000/customers/6
+Completed 302 Found in 7950ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 21:54:06 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.4ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/customers/show.html.erb:11
+  Rendered customers/show.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 254ms (Views: 215.8ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 22:03:26 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/customers/show.html.erb:11
+  Rendered customers/show.html.erb within layouts/application (35.6ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 4.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `datetime' for #<Service:0x007fd8e92836a0>):
+     9: <h4>Upcoming Appointments</h4><br>
+    10: <% @customer.appointments.each do |appointment|%>
+    11:     <p>You're Getting <%= appointment.service.name %>!</p>
+    12:     <p>Day: <%= appointment.service.datetime %></p>
+    13: <% end %>
+    14: 
+    15: <%= link_to "Make an Appointment", salons_path%><br>
+  
+app/views/customers/show.html.erb:12:in `block in _app_views_customers_show_html_erb___3689315550979852387_70284798577400'
+app/views/customers/show.html.erb:10:in `_app_views_customers_show_html_erb___3689315550979852387_70284798577400'
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 22:03:37 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/customers/show.html.erb:11
+  Rendered customers/show.html.erb within layouts/application (16.0ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `date' for #<Service:0x007fd8ede9bd80>
+Did you mean?  update):
+     9: <h4>Upcoming Appointments</h4><br>
+    10: <% @customer.appointments.each do |appointment|%>
+    11:     <p>You're Getting <%= appointment.service.name %>!</p>
+    12:     <p>Day: <%= appointment.service.date %></p>
+    13: <% end %>
+    14: 
+    15: <%= link_to "Make an Appointment", salons_path%><br>
+  
+app/views/customers/show.html.erb:12:in `block in _app_views_customers_show_html_erb___3689315550979852387_70284800887300'
+app/views/customers/show.html.erb:10:in `_app_views_customers_show_html_erb___3689315550979852387_70284800887300'
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 22:04:51 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/customers/show.html.erb:11
+  Rendered customers/show.html.erb within layouts/application (14.0ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `date' for #<Appointment:0x007fd8e8d7a960>
+Did you mean?  update):
+     9: <h4>Upcoming Appointments</h4><br>
+    10: <% @customer.appointments.each do |appointment|%>
+    11:     <p>You're Getting <%= appointment.service.name %>!</p>
+    12:     <p>Day: <%= appointment.date %></p>
+    13: <% end %>
+    14: 
+    15: <%= link_to "Make an Appointment", salons_path%><br>
+  
+app/views/customers/show.html.erb:12:in `block in _app_views_customers_show_html_erb___3689315550979852387_70284804634720'
+app/views/customers/show.html.erb:10:in `_app_views_customers_show_html_erb___3689315550979852387_70284804634720'
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 22:04:58 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/customers/show.html.erb:11
+  Rendered customers/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 61ms (Views: 51.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 22:05:16 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:10
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/customers/show.html.erb:11
+  Rendered customers/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 71ms (Views: 61.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 22:06:00 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:11
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/customers/show.html.erb:12
+  Rendered customers/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 74ms (Views: 60.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 22:06:23 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.6ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:11
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/customers/show.html.erb:12
+  Rendered customers/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 70ms (Views: 59.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 22:07:42 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.3ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:11
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/customers/show.html.erb:12
+  Rendered customers/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 82ms (Views: 71.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 22:08:02 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.3ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.2ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:11
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/customers/show.html.erb:12
+  Rendered customers/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 83ms (Views: 72.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/salons" for 127.0.0.1 at 2019-01-03 22:08:11 -0500
+Processing by SalonsController#index as HTML
+  Rendering salons/index.html.erb within layouts/application
+  [1m[36mSalon Load (0.2ms)[0m  [1m[34mSELECT "salons".* FROM "salons"[0m
+  ↳ app/views/salons/index.html.erb:4
+  Rendered salons/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 72ms (Views: 60.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/salons/3" for 127.0.0.1 at 2019-01-03 22:08:13 -0500
+Processing by SalonsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSalon Load (0.5ms)[0m  [1m[34mSELECT  "salons".* FROM "salons" WHERE "salons"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/salons_controller.rb:29
+  Rendering salons/show.html.erb within layouts/application
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."salon_id" = ?[0m  [["salon_id", 3]]
+  ↳ app/views/salons/show.html.erb:8
+  Rendered salons/show.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 85ms (Views: 67.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/hair_stylists/4" for 127.0.0.1 at 2019-01-03 22:08:15 -0500
+Processing by HairStylistsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mHairStylist Load (0.4ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/hair_stylists_controller.rb:15
+  Rendering hair_stylists/show.html.erb within layouts/application
+  [1m[36mCustomer Load (0.4ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  [1m[36mService Load (0.3ms)[0m  [1m[34mSELECT "services".* FROM "services" WHERE "services"."hair_stylist_id" = ?[0m  [["hair_stylist_id", 4]]
+  ↳ app/views/hair_stylists/show.html.erb:9
+  Rendered hair_stylists/show.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 67ms (Views: 54.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/appointments/8/new" for 127.0.0.1 at 2019-01-03 22:08:16 -0500
+Processing by AppointmentsController#new as HTML
+  Parameters: {"service_id"=>"8"}
+  [1m[36mCustomer Load (1.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:5
+  [1m[36mService Load (2.4ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:6
+  [1m[36mHairStylist Load (0.3ms)[0m  [1m[34mSELECT  "hair_stylists".* FROM "hair_stylists" WHERE "hair_stylists"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:7
+  Rendering appointments/new.html.erb within layouts/application
+  Rendered appointments/new.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 66ms (Views: 48.8ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/appointments" for 127.0.0.1 at 2019-01-03 22:08:19 -0500
+Processing by AppointmentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2SHuwMBbezkemyqBa/WerZCktD54Hks5CksTqQLhhGCF3AigvnLYpyJGSlHDAx/II9LnYKfBtl2lSb2DR3DWSQ==", "appointment"=>{"service_id"=>"8", "datetime"=>"2019-01-08 22:08:16 -0500"}, "commit"=>"Create Appointment"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/appointments_controller.rb:25
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:25
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/appointments_controller.rb:25
+  [1m[36mAppointment Create (1.0ms)[0m  [1m[32mINSERT INTO "appointments" ("customer_id", "service_id", "datetime", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["customer_id", 6], ["service_id", 8], ["datetime", "2019-01-09 03:08:16"], ["created_at", "2019-01-04 03:08:19.718303"], ["updated_at", "2019-01-04 03:08:19.718303"]]
+  ↳ app/controllers/appointments_controller.rb:25
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/appointments_controller.rb:25
+Redirected to http://localhost:3000/customers/6
+Completed 302 Found in 5434ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/customers/6" for 127.0.0.1 at 2019-01-03 22:08:25 -0500
+Processing by CustomersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCustomer Load (0.5ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:40
+  [1m[36mHairtype Load (0.2ms)[0m  [1m[34mSELECT  "hairtypes".* FROM "hairtypes" WHERE "hairtypes"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/customers_controller.rb:7
+  Rendering customers/show.html.erb within layouts/application
+  [1m[36mAppointment Load (0.4ms)[0m  [1m[34mSELECT "appointments".* FROM "appointments" WHERE "appointments"."customer_id" = ?[0m  [["customer_id", 6]]
+  ↳ app/views/customers/show.html.erb:11
+  [1m[36mService Load (1.9ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/customers/show.html.erb:12
+  [1m[36mService Load (0.2ms)[0m  [1m[34mSELECT  "services".* FROM "services" WHERE "services"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/customers/show.html.erb:12
+  Rendered customers/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 150ms (Views: 136.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 22:08:54 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.3ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 55ms (Views: 47.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 22:13:12 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 67ms (Views: 54.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-01-03 22:13:14 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AJcZkZzKKqs6tBe6o6luqWOsNJ3lwI3MICEL175fdGVt5EiASs0V2VtxYPunvnOaPRofXWQFIQ7Fn9GAdkJu3Q=="}
+No template found for SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 249ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-01-03 22:13:15 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AJcZkZzKKqs6tBe6o6luqWOsNJ3lwI3MICEL175fdGVt5EiASs0V2VtxYPunvnOaPRofXWQFIQ7Fn9GAdkJu3Q=="}
+No template found for SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 233ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-01-03 22:13:17 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AJcZkZzKKqs6tBe6o6luqWOsNJ3lwI3MICEL175fdGVt5EiASs0V2VtxYPunvnOaPRofXWQFIQ7Fn9GAdkJu3Q=="}
+No template found for SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 237ms (ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-01-03 22:16:30 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AJcZkZzKKqs6tBe6o6luqWOsNJ3lwI3MICEL175fdGVt5EiASs0V2VtxYPunvnOaPRofXWQFIQ7Fn9GAdkJu3Q=="}
+No template found for SessionsController#destroy, rendering head :no_content
+Completed 204 No Content in 306ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 22:25:20 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 72ms (Views: 66.1ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-01-03 22:25:22 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"eNZTylJUm90aO7s3t1TvWr5Ze9ZnsIt/N/aFjLFBFE0VpQLbhFOkr3v+zHazQ/Jp4O9QFuZ1J73SSF/beVwO9Q=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 22:25:22 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 96ms (Views: 86.9ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-01-03 22:25:24 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"A4q83xngHOpwhLQbs1Z0CZYcAdL0n3NcPz5Ly6KmSGpu+e3Oz+cjmBFBw1q3QWk6yKoqEnVa357agJGcartS0g=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 22:25:24 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 57ms (Views: 51.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 22:26:12 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  [1m[36mCustomer Load (0.2ms)[0m  [1m[34mSELECT  "customers".* FROM "customers" WHERE "customers"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:9
+  Rendered pages/home.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 96ms (Views: 90.4ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-01-03 22:26:14 -0500
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Kc/OuIHddVP9t1+AYrtZAZjNDkfYF8vHCy+wJSITm25EvJ+pV9pKIZxyKMFmrEQyxnslh1nSZwXukWpy6g6B1g=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 22:26:14 -0500
+Processing by PagesController#home as HTML
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 57ms (Views: 52.0ms | ActiveRecord: 0.0ms)
+
+

@@ -1,6 +1,11 @@
 <h1>Honeycomb</h1>
 
 <%= link_to "Salons", salons_path %><br>
-<%= link_to "Login", login_path %><br>
-<%= link_to "Sign Up", new_customer_path %><br>
-<%= link_to "Hairtypes", hairtypes_path %>
+<%= link_to "Hairtypes", hairtypes_path %><br>
+<% if logged_in? %>
+  <%= link_to "Your Profile", customer_path(session[:customer_id]) %><br>
+  <%= link_to "Log Out", logout_path, method: :delete %><br>
+<% else %>
+  <%= link_to "Login", login_path %><br>
+  <%= link_to "Sign Up", new_customer_path %><br>
+<% end %>
