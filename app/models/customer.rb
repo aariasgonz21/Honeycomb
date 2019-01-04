@@ -1,6 +1,9 @@
 class Customer < ApplicationRecord
   has_many :appointments
   has_many :services, through: :appointments
+  has_many :hair_stylists, through: :services
+  has_many :salons, through: :hair_stylists
+  
   belongs_to :hairtype
   before_save { email.downcase! }
 

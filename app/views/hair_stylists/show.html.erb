@@ -6,6 +6,6 @@
 <h5>Services Offered: </h5>
 <ul>
   <% @hair_stylist.services.each do |service| %>
-      <li><%= service.name %>  <%= service.price %></li>
+      <li><%= service.name %>  --  $<%= service.price %>.00</li>
   <% end %>
 </ul>

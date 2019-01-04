@@ -12,7 +12,7 @@ Salon.destroy_all
 Customer.destroy_all
 HairStylist.destroy_all
 Hairtype.destroy_all
-Services.destroy_all
+Service.destroy_all
 
 ################################ Salons ##########################################
 
