@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+ @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+ body{
+   background-image: url(honeycomb_background.png);
+   background-position: right;
+   background-repeat: no-repeat;
+ }
+
+ #main-title{
+   font-family: Montserrat, sans-serif;
+   text-align: center;
+   font-size: 50px;
+   margin-top:0.5em;
+   clear:both;
+ }
+
+ .menu {
+   margin-top: 10px;
+   float:right;
+ }
+
+ .center_img {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+ }
